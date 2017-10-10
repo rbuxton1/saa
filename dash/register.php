@@ -10,11 +10,11 @@
     $sql = "SELECT * from user where username = '$username'";
     $result = mysqli_query($db,$sql);
     if(0 != mysqli_num_rows($result)){
-      $error = "Username already used.<br>";
+      $error = "Username already used.";
       //Add test to see if its an email
     } else{
       if(pass != comPass){
-        $error .= "Passwords do not match.<br>";
+        $error .= "Passwords do not match.";
       } else {
         $hashPass = hash($password);
         $sql = "INSERT INTO user ('id', 'email', 'password') values (NULL, '$username', '$hashPass')"
