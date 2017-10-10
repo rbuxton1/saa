@@ -3,6 +3,7 @@
   session_start();
 
   $msg = "";
+  $error = false;
 
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = mysqli_real_escape_string($db,$_POST['username']);
@@ -19,7 +20,7 @@
         $msg .= "Passwords do not match.";
       } else {
         $hashPass = hash('sha256', $password);
-        $sql = "INSERT INTO user ('id', 'email', 'password') values (NULL, '$username', '$hashPass')"
+        $sql = "INSERT INTO user (id, email, password) values (NULL, '$username', '$hashPass')"
         $result = mysqli_query($db,$sql);
         if($result){
           $msg = "succ";
