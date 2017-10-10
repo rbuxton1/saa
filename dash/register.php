@@ -20,6 +20,8 @@
         $sql = "INSERT INTO user ('id', 'email', 'password') values (NULL, '$username', '$hashPass')"
       }
     }
+    echo $error;
+    echo $username . ' ' . $pass .' ' . $sql;
   }
 ?>
 <html>
@@ -35,6 +37,5 @@
       <label>Password  :</label><input type = "password" name = "password2" class = "box" /><br/><br />
       <input type = "submit" value = " Submit "/><br />
     </form>
-    <p> <<?php echo $error ?>
   </center>
 </html>
