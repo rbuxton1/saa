@@ -35,5 +35,6 @@
       <label>Password  :</label><input type = "password" name = "password2" class = "box" /><br/><br />
       <input type = "submit" value = " Submit "/><br />
     </form>
+    <p> <<?php echo $error ?>
   </center>
 </html>
