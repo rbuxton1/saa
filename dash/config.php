@@ -1,5 +1,5 @@
 <?php
-   define('DB_SERVER', 'localhost:3036');
+   define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'saaUser');
    define('DB_PASSWORD', 'D0gs_l1k3_art!'); //What ever the password is
    define('DB_DATABASE', 'saa');

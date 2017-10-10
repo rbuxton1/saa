@@ -27,7 +27,7 @@
       }
     }
     echo $msg;
-    echo $username . ' ' . $pass .' ' . $sql;
+    //echo $username . ' ' . $pass .' ' . $sql;
   }
 ?>
 <html>
