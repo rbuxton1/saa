@@ -10,7 +10,7 @@
     $sql = "SELECT * from user where username = '$username'";
     $result = mysqli_query($db,$sql);
     if(0 != mysqli_num_rows($result)){
-      $error = "Username already used.";
+      $error .= "Username already used.";
       //Add test to see if its an email
     } else{
       if(pass != comPass){
