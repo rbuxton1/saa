@@ -7,7 +7,7 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $sql = "INSERT INTO user (id, email, password) values (NULL, 'squee', 'scmhee')"
+  $sql = "INSERT INTO user (id, email, password) values (NULL, 'squee', 'scmhee')";
   $result = mysqli_query($db,$sql);
   echo $result;
 ?>
