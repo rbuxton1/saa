@@ -6,9 +6,9 @@
   $error = false;
 
   if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = mysqli_real_escape_string($db,$_POST['username']);
-    $pass = mysqli_real_escape_string($db,$_POST['password']);
-    $comPass = mysqli_real_escape_string($db,$_POST['password2']);
+    $name = trim($_POST['username'])
+    $pass = trim($_POST['password']);
+    $comPass = trim($_POST['password2']);
 
     $sql = "SELECT * from user where email = '$username'";
     $result = mysqli_query($db,$sql);
