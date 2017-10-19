@@ -27,7 +27,7 @@
         }
       }
     }
-    echo $msg;
+    $msg .= $username . ' ' . $pass . ' ' . $sql;
     //echo $username . ' ' . $pass .' ' . $sql;
   }
 ?>
@@ -44,5 +44,6 @@
       <label>Password  :</label><input type = "password" name = "password2" class = "box" /><br/><br />
       <input type = "submit" value = " Submit "/><br />
     </form>
+    <p> <?php echo $msg; ?> </p>
   </center>
 </html>
