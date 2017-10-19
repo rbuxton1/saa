@@ -2,7 +2,7 @@
   include("config.php");
   session_start();
 
-  $msg = "";
+  $msg = "unedited (form not yet sent?)";
   $error = false;
 
   if($_SERVER["REQUEST_METHOD"] == "POST") {
