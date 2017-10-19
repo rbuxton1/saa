@@ -20,7 +20,7 @@
         $msg .= "Passwords do not match.";
       } else {
         $hashPass = hash('sha256', $password);
-        $sql = "INSERT INTO user (id, email, password) values (NULL, '$username', '$hashPass')"
+        $sql = "INSERT INTO user (id, email, password) values (NULL, '$username', '$hashPass')";
         $result = mysqli_query($db,$sql);
         if($result){
           $msg = "succ";
