@@ -6,7 +6,7 @@
   $error = false;
 
   if(isset($_POST['submit'])) {
-    $name = trim($_POST['username'])
+    $name = trim($_POST['username']);
     $pass = trim($_POST['password']);
     $comPass = trim($_POST['password2']);
 
