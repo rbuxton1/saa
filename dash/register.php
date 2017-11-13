@@ -2,10 +2,11 @@
   include("config.php");
   session_start();
 
-  $msg = "unedited ";
+  $msg = "";
   $error = false;
 
   if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $msg .= "sent. ";
     $name = trim($_POST['username']);
     $pass = trim($_POST['password']);
     $comPass = trim($_POST['password2']);
