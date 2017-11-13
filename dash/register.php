@@ -28,6 +28,7 @@
       }
     }
     $msg .= $username . ' ' . $pass . ' ' . $sql;
+    sleep(2);
     //echo $username . ' ' . $pass .' ' . $sql;
   }
 ?>
