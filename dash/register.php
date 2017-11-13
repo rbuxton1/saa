@@ -13,17 +13,19 @@
     $sql = "SELECT * from user where email = '$username'";
     $result = mysqli_query($db,$sql);
     if(0 != mysqli_num_rows($result)){
-      $msg .= "Username already used.";
+      $msg .= " || Username already used.";
       //Add test to see if its an email
     } else{
       if(pass != comPass){
-        $msg .= "Passwords do not match.";
+        $msg .= " || Passwords do not match.";
       } else {
         $hashPass = hash('sha256', $password);
         $sql = "INSERT INTO user (id, email, password) values (NULL, '$username', '$hashPass')";
         $result = mysqli_query($db,$sql);
         if($result){
-          $msg .= "succ";
+          $msg .= " || succ";
+        } else {
+          $msg .= ((string)$result);
         }
       }
     }
