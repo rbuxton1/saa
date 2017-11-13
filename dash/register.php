@@ -2,10 +2,10 @@
   include("config.php");
   session_start();
 
-  $msg = "unedited (form not yet sent?)";
+  $msg = "unedited ";
   $error = false;
 
-  if(isset($_POST['submit'])) {
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim($_POST['username']);
     $pass = trim($_POST['password']);
     $comPass = trim($_POST['password2']);
@@ -28,7 +28,6 @@
       }
     }
     $msg .= $username . ' ' . $pass . ' ' . $sql;
-    sleep(2);
     //echo $username . ' ' . $pass .' ' . $sql;
   }
 ?>
