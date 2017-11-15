@@ -31,7 +31,7 @@
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
 
-          $target_dir = "uploads/";
+          $target_dir = "~/www/uploads/";
           $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
           $uploadOk = 1;
           $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -39,7 +39,7 @@
           if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
-              echo "File is an image - " . $target_file . ".";
+              echo "File is an image - '" . $target_file . "'. ";
               $uploadOk = 1;
 
               $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$target_file', 'NO_TAG', NULL, '$name', NULL)";
