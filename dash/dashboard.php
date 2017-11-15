@@ -57,6 +57,7 @@
               echo "File is not an image.";
               $uploadOk = 0;
             }
+          }
         ?>
 
       </p>
