@@ -39,11 +39,17 @@
           if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
-              echo "File is an image - " . $check["mime"] . ".";
+              echo "File is an image - " . $target_file . ".";
               $uploadOk = 1;
 
               $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$target_file', 'NO_TAG', NULL, '$name', NULL)";
+              $result = mysqli_query($db,$sql);
 
+              if($result){
+                echo 'Uploaded!';
+              } else {
+                echo 'Failed: ' . (string($result));
+              }
             } else {
               echo "File is not an image.";
               $uploadOk = 0;
