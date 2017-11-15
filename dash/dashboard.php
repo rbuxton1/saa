@@ -48,7 +48,7 @@
               $result = mysqli_query($db,$sql);
 
               if($result){
-                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)
+                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
                 echo 'Uploaded!';
               } else {
                 echo 'Failed: ' . (string($result));
