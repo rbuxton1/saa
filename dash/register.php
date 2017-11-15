@@ -6,32 +6,49 @@
   $error = false;
 
   if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $msg .= "sent. ";
-    $name = trim($_POST['username']);
+    $email = trim($_POST['username']);
     $pass = trim($_POST['password']);
     $comPass = trim($_POST['password2']);
 
-    $sql = "SELECT * from user where email = '$username'";
-    $result = mysqli_query($db,$sql);
-    if(0 != mysqli_num_rows($result)){
-      $msg .= " || Username already used.";
-      //Add test to see if its an email
-    } else{
-      if(pass != comPass){
-        $msg .= " || Passwords do not match.";
-      } else {
-        $hashPass = hash('sha256', $password);
-        $sql = "INSERT INTO user (id, email, password) values (NULL, '$username', '$hashPass')";
-        $result = mysqli_query($db,$sql);
-        if($result){
-          $msg .= " || succ";
-        } else {
-          $msg .= ((string)$result);
+    $error = false;
+    $errorMsg = "";
+
+    if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+        $error = true;
+        $errorMsg .= "Please enter a real email. ";
+    } else {
+        $query = "SELECT email FROM user WHERE email='$email'";
+        $result = mysqli_query($db,$query);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $count = mysqli_num_rows($result);
+        if($count != 0){
+            $error = true;
+            $errorMsg .= "Email is already in use. ";
         }
+    }
+
+    if($pass != $comPass){
+      $error = true;
+      $errorMsg .= "Passwords do not match. ";
+    }
+
+    if(!$error){ //NO error
+      $hashedPass = hash('sha256', $password);
+
+      $query = "INSERT INTO user (id, email, password) VALUES (NULL, '$email', '$hashedPass')";
+      $result = mysqli_query($db,$query);
+
+      if($result){
+          $errorMsg = "Sucsess";
+          unset($name);
+          unset($password);
+          unset($email);
+          unset($confirm);
+          unset($hashedPass);
+      } else {
+          $errorMsg = "Failure" . ((string)$result) . ": " . $query;
       }
     }
-    $msg .= $username . ' ' . $pass . ' ' . $sql;
-    //echo $username . ' ' . $pass .' ' . $sql;
   }
 ?>
 <html>
@@ -47,6 +64,6 @@
       <label>Password  :</label><input type = "password" name = "password2" class = "box" /><br/><br />
       <input type = "submit" value = " Submit "/><br />
     </form>
-    <p> <?php echo $msg; ?> </p>
+    <p> <?php echo $errorMsg; ?> </p>
   </center>
 </html>
