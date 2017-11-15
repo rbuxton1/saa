@@ -6,8 +6,6 @@
 
   //basic data about guest
   $user = $_SESSION['login_user'];
-
-  echo getcwd();
 ?>
 <html>
   <head>
@@ -29,6 +27,8 @@
         <?php
           include('session.php');
           include('config.php');
+
+          echo getcwd();
 
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
