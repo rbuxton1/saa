@@ -15,6 +15,8 @@
     <center>
       <h1> Welcome, <?php echo $user; ?> ! </h1>
       <p>
+        Click <a href="logout.php">here</a> to log out. <br>
+        <br>
         Include upload form here
       </p>
       <hr
