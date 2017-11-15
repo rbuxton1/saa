@@ -31,8 +31,9 @@
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
 
-          $target_dir = "~/www/uploads/";
-          $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+          $target_dir = "../uploads/";
+          $source = basename($_FILES["fileToUpload"]["name"]);
+          $target_file = $target_dir . $source;
           $uploadOk = 1;
           $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
           // Check if image file is a actual image or fake image
@@ -42,7 +43,7 @@
               echo "File is an image - '" . $target_file . "'. ";
               $uploadOk = 1;
 
-              $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$target_file', 'NO_TAG', NULL, '$name', NULL)";
+              $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', 'NO_TAG', NULL, '$name', NULL)";
               $result = mysqli_query($db,$sql);
 
               if($result){
