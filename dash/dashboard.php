@@ -1,5 +1,11 @@
 <?php
+  include('session.php');
+  include('config.php');
+  session_start();
 
+
+  //basic data about guest
+  $user = $_SESSION['login_user'];
 ?>
 <html>
   <head>
@@ -7,7 +13,7 @@
   </head>
   <body>
     <center>
-      <h1> Welcome, <?php echo $login_user; ?> ! </h1>
+      <h1> Welcome, <?php echo $user; ?> ! </h1>
       <p>
         Include upload form here
       </p>
