@@ -6,6 +6,8 @@
 
   //basic data about guest
   $user = $_SESSION['login_user'];
+
+  echo getcwd();
 ?>
 <html>
   <head>
@@ -40,7 +42,6 @@
           if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
-              echo "File is an image - '" . $target_file . "'. ";
               $uploadOk = 1;
 
               $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', 'NO_TAG', NULL, '$name', NULL)";
