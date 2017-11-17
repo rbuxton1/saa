@@ -93,11 +93,11 @@
       </p>
       <hr>
       <p>
-        Uploaded works by this artist here (new) <?php echo $user; ?>
+        Uploaded works by this artist here (new) <?php echo "(".$user.")"; ?>
         <table border="1">
           <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
             <?php
-              $request = "SELECT * FROM pendingArt";
+              $request = "SELECT * FROM pendingArt WHERE artist = '$user'";
               $sql = mysqli_query($db, $request);
               echo $request . " >> " . ((string) $sql);
               while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
