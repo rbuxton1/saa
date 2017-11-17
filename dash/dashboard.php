@@ -97,6 +97,7 @@
         <table border="1">
           <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
             <?php
+              echo "<br>??<br>";
               $request = "SELECT * FROM pendingArt WHERE artist = '$user'";
               $sql = mysqli_query($db, $request);
               echo $request . " >> " . ((string) $sql);
