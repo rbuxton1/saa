@@ -6,9 +6,6 @@
 
   //basic data about guest
   $user = $_SESSION['login_user'];
-
-  $request = "SELECT * FROM pendingArt WHERE artist = '$user'";
-  $sql = mysqli_query($db, $request);
 ?>
 <html>
   <head>
@@ -100,11 +97,12 @@
         <table border="1">
           <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
             <?php
-
+              $request = "SELECT * FROM pendingArt";
+              $sql = mysqli_query($db, $request);
               echo $request . " >> " . ((string) $sql);
               while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
                 echo "<tr>";
-                echo "<td><center>" . "<img src = '/uploads/'" . $row['src'] . "></img>" . "</center></td>";
+                echo "<td><center>" . "img src = '/uploads/'" . $row['src'] . "" . "</center></td>";
                 echo "<td><center>" . $row['title'] . "</center></td>";
                 echo "<td><center>" . $row['tags'] . "</center></td>";
                 echo "<td><center>" . $row['data'] . "</center></td>";
