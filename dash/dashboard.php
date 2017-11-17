@@ -98,9 +98,9 @@
           <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
             <?php
               echo "<br>??<br>";
-              $request = "SELECT * FROM pendingArt WHERE artist = '$user'";
-              $sql = mysqli_query($db, $request);
-              echo $request . " >> " . ((string) $sql);
+              $req = "SELECT * FROM pendingArt WHERE artist = '$user'";
+              $sql = mysqli_query($db, $req);
+              echo $req . " >> ";
               while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
                 echo "<tr>";
                 echo "<td><center>" . "img src = '/uploads/'" . $row['src'] . "" . "</center></td>";
