@@ -94,6 +94,17 @@
       <hr>
       <p>
         Uploaded works by this artist here
+        <?php
+          $sql = "SELECT FROM pendingArt WHERE artist = '$user'";
+          while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+            echo "<tr>";
+            echo "<td><center>" . "<img src = '/uploads/'"$row['src'] . "></img>" . "</center></td>";
+            echo "<td><center>" . $row['title'] . "</center></td>";
+            echo "<td><center>" . $row['tags'] . "</center></td>";
+            echo "<td><center>" . $row['data'] . "</center></td>";
+            echo "</tr>";
+          }
+        ?>
       </p>
     </center>
   </body>
