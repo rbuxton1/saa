@@ -28,14 +28,25 @@
           include('session.php');
           include('config.php');
 
+          function generateRandomString($length = 10) {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $charactersLength = strlen($characters);
+            $randomString = '';
+            for ($i = 0; $i < $length; $i++) {
+              $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+            return $randomString;
+          }
+
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
 
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
-          $source = basename($_FILES["fileToUpload"]["name"]);
-          $target_file = $target_dir . $source; //$source;
+          $source = generateRandomString(); // basename($_FILES["fileToUpload"]["name"])
+
           $uploadOk = 1;
           $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+          $target_file = $target_dir . $source . $imageFileType; //$source;
 
           // Check if image file is a actual image or fake image
           if(isset($_POST["submit"])) {
@@ -45,6 +56,12 @@
               echo "File is an image - (<i>" . $check["mime"] . "</i>). <br>";
             } else {
               echo "File is not an image.<br>";
+              $uploadOk = 0;
+            }
+
+            // Check if file already exists
+            if (file_exists($target_file)) {
+              echo "Please try again. <br>";
               $uploadOk = 0;
             }
 
