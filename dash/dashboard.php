@@ -42,11 +42,11 @@
           $title = $_POST['title'];
 
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
-          $source = generateRandomString(); // basename($_FILES["fileToUpload"]["name"])
+          $source = generateRandomString(). "." . end((explode(".", $_FILES["fileToUpload"]["name"]))); // basename($_FILES["fileToUpload"]["name"])
 
           $uploadOk = 1;
 
-          $target_file = $target_dir . $source . "." .end((explode(".", $_FILES["fileToUpload"]["name"])));; //$source;
+          $target_file = $target_dir . $source; //$source;
           $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
           // Check if image file is a actual image or fake image
