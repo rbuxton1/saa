@@ -28,8 +28,6 @@
           include('session.php');
           include('config.php');
 
-          echo getcwd();
-
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
 
@@ -68,7 +66,7 @@
                   echo 'however failed to get to the database. ERR: ' . (string($result)) . "<br>";
                 }
               } else {
-                echo "Sorry, there was an error uploading your file. " . ((string)$possibleError) . "<br>";
+                echo "Sorry, there was an error uploading your file. ERR: (" . ((string)$possibleError) . ")<br>";
               }
             }
           }
