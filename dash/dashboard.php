@@ -31,7 +31,7 @@
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
 
-          $target_dir = "../uploads/";
+          $target_dir = str_replace("www/","",getcwd());;
           $source = basename($_FILES["fileToUpload"]["name"]);
           $target_file = $target_dir . $source;
           $uploadOk = 1;
