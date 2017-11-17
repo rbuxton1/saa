@@ -46,7 +46,7 @@
 
           $uploadOk = 1;
 
-          $target_file = $target_dir . $source . $ext = end((explode(".", $_FILES["fileToUpload"]["name"])));; //$source;
+          $target_file = $target_dir . $source . "." .end((explode(".", $_FILES["fileToUpload"]["name"])));; //$source;
           $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
           // Check if image file is a actual image or fake image
