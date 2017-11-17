@@ -95,7 +95,7 @@
       <p>
         Uploaded works by this artist here
         <?php
-          $request = "SELECT FROM pendingArt WHERE artist = '$_SESSION['login_user']'";
+          $request = "SELECT * FROM pendingArt WHERE artist = '$user'";
           $sql = mysqli_query($db, $request);
           echo $request . " >> " . ((string) $sql);
           while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
