@@ -93,7 +93,7 @@
       </p>
       <hr>
       <p>
-        Uploaded works by this artist here
+        Uploaded works by this artist here (new)
         <?php
           $request = "SELECT * FROM pendingArt WHERE artist = '$user'";
           $sql = mysqli_query($db, $request);
