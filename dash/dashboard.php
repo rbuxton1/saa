@@ -102,6 +102,7 @@
               $sql = mysqli_query($db, $req);
               echo $req . " >> ";
               while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+                echo "img src = '../uploads/'" . $row['src'];
                 echo "<tr>";
                 echo "<td><center>" . "<img src = '../uploads/'" . $row['src'] . "></img>" . "</center></td>";
                 echo "<td><center>" . $row['title'] . "</center></td>";
