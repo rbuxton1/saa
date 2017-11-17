@@ -53,7 +53,7 @@
               echo "Sorry, your file was not uploaded. <br>";
             } else {
               $possibleError = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-
+              echo $target_file . "<br>";
               if ($possibleError) {
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded to the server... ";
 
