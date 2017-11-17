@@ -93,7 +93,7 @@
       </p>
       <hr>
       <p>
-        Uploaded works by this artist here (new)
+        Uploaded works by this artist here (new) <?php echo $user; ?>
         <table border="1">
           <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
             <?php
