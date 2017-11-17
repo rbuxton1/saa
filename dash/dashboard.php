@@ -33,7 +33,7 @@
 
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
           $source = basename($_FILES["fileToUpload"]["name"]);
-          $target_file = $target_dir . $source;
+          $target_file = $target_dir; //$source;
           $uploadOk = 1;
           $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
