@@ -45,8 +45,9 @@
           $source = generateRandomString(); // basename($_FILES["fileToUpload"]["name"])
 
           $uploadOk = 1;
-          $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-          $target_file = $target_dir . $source . $imageFileType; //$source;
+
+          $target_file = $target_dir . $source . $ext = end((explode(".", $_FILES["fileToUpload"]["name"])));; //$source;
+          $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
           // Check if image file is a actual image or fake image
           if(isset($_POST["submit"])) {
