@@ -37,7 +37,7 @@
                 <form action = '' method = 'submit'>
                   <input type = 'number' name = '$myRating' class='box'> </td>";
               echo "<td><center> <input type='submit' value='Upload Image' name='submit'>
-                input type='hidden' name='id' value='<?php echo '$id';?>'/>  </form>";
+                <input type='hidden' name='id' value='<?php echo '$id';?>'/>  </form>";
               echo "</tr>";
 
               if(isset($_POST['id'])){
