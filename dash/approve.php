@@ -42,7 +42,19 @@
 
               if(isset($_POST["id"])){
                 $okayID = $_POST['id'];
-                header("Location: " . $okayID);
+                $sql "SELECT * FROM pendingArt WHERE id = $id";
+                $row = mysqli_fetch_array(mysqli_query($db, $sql), MYSQLI_ASSOC);
+                $title = $row["title"];
+                $src = $row["src"];
+                $tags = $row["tags"];
+                $artist = $row["artist"];
+                $data = $row["data"];
+                $rate = $_POST['ratingValue' . $okayID];
+
+                $insertStatement = "INSERT INTO liveArt ('id', 'title', 'src', 'tags', 'rate', 'artist', 'data') VALUES
+                                                        (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
+                $res = mysqli_query($db, $sql);
+                header("Refresh:0");
               }
             }
           ?>
