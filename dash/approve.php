@@ -42,7 +42,7 @@
 
               if(isset($_POST['id'])){
                 $okayID = $_POST['id'];
-                echo "<h1>AH! " . $okayID . "</h1>";
+                echo "<script>alert('$okayID'); </script>";
               }
             }
           ?>
