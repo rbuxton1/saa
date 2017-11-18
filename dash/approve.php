@@ -14,3 +14,26 @@
 
   if($isAdmin == 0) header("Location: login.php"); //kicks out non-admins
 ?>
+<html>
+  <body>
+    <h1> Recent submissions </h1>
+    <p>
+      <table border="1">
+        <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th> <th>Rating</th> <th>Send to live</th></tr>
+          <?php
+            $req = "SELECT * FROM pendingArt";
+            $sql = mysqli_query($db, $req);
+            while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+              echo "<tr>";
+              echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'>" . "</center></td>";
+              echo "<td><center>" . $row['title'] . "</center></td>";
+              echo "<td><center>" . $row['tags'] . "</center></td>";
+              echo "<td><center>" . $row['data'] . "</center></td>";
+              echo "<td><center>
+                <form action = '' method = 'submit'>
+                  <input type = 'number' name = 'ratingValue' class='box'> </td>";
+              echo "<td><center> <input type='submit' value='Upload Image' name='submit'> </form>"
+              echo "</tr>";
+            }
+          ?>
+      </table>
