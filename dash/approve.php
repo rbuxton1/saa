@@ -42,7 +42,7 @@
 
               if(isset($_POST["id"])){
                 $okayID = $_POST['id'];
-                $sql "SELECT * FROM pendingArt WHERE id = '$id'";
+                $sql "SELECT * FROM pendingArt WHERE id = '$okayID'";
                 $row = mysqli_fetch_array(mysqli_query($db, $sql), MYSQLI_ASSOC);
                 $title = $row["title"];
                 $src = $row["src"];
