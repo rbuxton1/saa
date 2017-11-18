@@ -40,7 +40,7 @@
                 <input type='hidden' name='id' value='$id'></form></td>";
               echo "</tr>";
 
-              if(isset($_POST['id'])){
+              if($_POST["sudmit"]){
                 $okayID = $_POST['id'];
                 echo "<script>alert('$okayID'); </script>";
               }
