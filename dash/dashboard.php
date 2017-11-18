@@ -97,14 +97,11 @@
         <table border="1">
           <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
             <?php
-              echo "<br>??<br>";
               $req = "SELECT * FROM pendingArt WHERE artist = '$user'";
               $sql = mysqli_query($db, $req);
-              echo $req . " >> ";
               while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
-                echo "img src = '../uploads/'" . $row['src'];
                 echo "<tr>";
-                echo "<td><center>" . "<img src = '../uploads/" . $row['src'] . "'></img>" . "</center></td>";
+                echo "<td><center>" . "<div style="max-height:450px; max-width:450px; overflow: hidden"><img src = '../uploads/" . $row['src'] . "'></div>" . "</center></td>";
                 echo "<td><center>" . $row['title'] . "</center></td>";
                 echo "<td><center>" . $row['tags'] . "</center></td>";
                 echo "<td><center>" . $row['data'] . "</center></td>";
