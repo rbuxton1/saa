@@ -32,7 +32,7 @@
               echo "<td><center>
                 <form action = '' method = 'submit'>
                   <input type = 'number' name = 'ratingValue' class='box'> </td>";
-              echo "<td><center> <input type='submit' value='Upload Image' name='submit'> </form>"
+              echo "<td><center> <input type='submit' value='Upload Image' name='submit'> </form>";
               echo "</tr>";
             }
           ?>
