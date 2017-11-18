@@ -22,7 +22,7 @@
       <h1> Welcome, <?php echo $user . " // " . $isAdmin; ?> ! </h1>
       <p>
         Click <a href="logout.php">here</a> to log out. <br>
-        <?php if($isAdmin == 1) echo "Click <a href="approve.php">here</a> to approve/deny recent image submissions." ?>
+        <?php if($isAdmin == 1) echo "Click <a href='approve.php'>here</a> to approve/deny recent image submissions." ?>
         <br>
 
         <form action="" method="post" enctype="multipart/form-data">
