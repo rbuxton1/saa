@@ -40,7 +40,7 @@
                 <input type='hidden' name='id' value='$id'></form></td>";
               echo "</tr>";
 
-              if($_POST["submit"]){
+              if(isset($_POST["id"])){
                 $okayID = $_POST['id'];
                 header("Location: " . $okayID);
               }
