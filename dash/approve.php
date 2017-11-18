@@ -18,8 +18,9 @@
   <body>
     <h1> Recent submissions </h1>
     <p>
-      <table border="1">
-        <tr><th>Image</th> <th>Title</th> <th>Artist</th> <th>Tags</th> <th>Extra Data</th> <th>Rating</th> <th>Send to live</th></tr>
+      <center>
+        <table border="1">
+          <tr><th>Image</th> <th>Title</th> <th>Artist</th> <th>Tags</th> <th>Extra Data</th> <th>Rating</th> <th>Send to live</th></tr>
           <?php
             $req = "SELECT * FROM pendingArt";
             $sql = mysqli_query($db, $req);
@@ -27,14 +28,26 @@
               echo "<tr>";
               echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'>" . "</center></td>";
               echo "<td><center>" . $row['title'] . "</center></td>";
-              echo "<td><center>" . $row['artist'] . "</center></td>"
+              echo "<td><center>" . $row['artist'] . "</center></td>";
               echo "<td><center>" . $row['tags'] . "</center></td>";
               echo "<td><center>" . $row['data'] . "</center></td>";
+              $myRating = "ratingValue" . $row['id'];
+              $id = $row['id'];
               echo "<td><center>
                 <form action = '' method = 'submit'>
-                  <input type = 'number' name = 'ratingValue' class='box'> </td>";
-              echo "<td><center> <input type='submit' value='Upload Image' name='submit'> </form>";
+                  <input type = 'number' name = '$myRating' class='box'> </td>";
+              echo "<td><center> <input type='submit' value='Upload Image' name='submit'>
+                input type='hidden' name='id' value='<?php echo '$id';?>'/>  </form>";
               echo "</tr>";
+
+              if(isset($_POST['id'])){
+                $okayID = $_POST['id'];
+                echo "<h1>AH! " . $okayID . "</h1>";
+              }
             }
           ?>
-      </table>
+        </table>
+      </center>
+    </p>
+  </body>
+</html>
