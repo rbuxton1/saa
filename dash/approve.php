@@ -42,7 +42,7 @@
 
               if($_POST["sudmit"]){
                 $okayID = $_POST['id'];
-                echo "<script>alert('$okayID'); </script>";
+                header("Location: " . $okayID);
               }
             }
           ?>
