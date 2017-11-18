@@ -101,7 +101,7 @@
               $sql = mysqli_query($db, $req);
               while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
                 echo "<tr>";
-                echo "<td><center>" . "<div style='max-width:450px; height: auto'><img src = '../uploads/" . $row['src'] . "'></div>" . "</center></td>";
+                echo "<td><center>" . "<div style='max-width:450px; height: auto; overflow: hidden'><img src = '../uploads/" . $row['src'] . "'></div>" . "</center></td>";
                 echo "<td><center>" . $row['title'] . "</center></td>";
                 echo "<td><center>" . $row['tags'] . "</center></td>";
                 echo "<td><center>" . $row['data'] . "</center></td>";
