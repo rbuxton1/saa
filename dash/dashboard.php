@@ -6,6 +6,12 @@
 
   //basic data about guest
   $user = $_SESSION['login_user'];
+
+  $req = "SELECT * FROM user WHERE email = '$user'";
+  $sql = mysqli_query($db, $req);
+  $row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
+  $isAdmin = $row['admin'];
+
 ?>
 <html>
   <head>
@@ -13,9 +19,10 @@
   </head>
   <body>
     <center>
-      <h1> Welcome, <?php echo $user; ?> ! </h1>
+      <h1> Welcome, <?php echo $user . " // " . $isAdmin; ?> ! </h1>
       <p>
         Click <a href="logout.php">here</a> to log out. <br>
+        <?php if($isAdmin == 1) echo "Click <a href="approve.php">here</a> to approve/deny recent image submissions." ?>
         <br>
 
         <form action="" method="post" enctype="multipart/form-data">
