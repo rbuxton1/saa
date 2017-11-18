@@ -19,7 +19,7 @@
     <h1> Recent submissions </h1>
     <p>
       <table border="1">
-        <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th> <th>Rating</th> <th>Send to live</th></tr>
+        <tr><th>Image</th> <th>Title</th> <th>Artist</th> <th>Tags</th> <th>Extra Data</th> <th>Rating</th> <th>Send to live</th></tr>
           <?php
             $req = "SELECT * FROM pendingArt";
             $sql = mysqli_query($db, $req);
@@ -27,6 +27,7 @@
               echo "<tr>";
               echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'>" . "</center></td>";
               echo "<td><center>" . $row['title'] . "</center></td>";
+              echo "<td><center>" . $row['artist'] . "</center></td>"
               echo "<td><center>" . $row['tags'] . "</center></td>";
               echo "<td><center>" . $row['data'] . "</center></td>";
               echo "<td><center>
