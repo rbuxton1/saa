@@ -43,6 +43,8 @@
           ?>
         </table>
         <?php
+          $msg = "";
+
           if(isset($_POST["submit"])){
             $okayID = $_POST['id'];
             $sql = "SELECT * FROM pendingArt WHERE id = '$okayID'";
@@ -57,10 +59,11 @@
             $insertStatement = "INSERT INTO liveArt ('id', 'title', 'src', 'tags', 'rate', 'artist', 'data') VALUES
                                                   (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
             $res = mysqli_query($db, $sql);
+            $msq = $sql . " // " . ((string)$res) . " // " . $insertStatement;
             echo "sqee " . ((string)$res);
             //header("Reload:0");
           } else {
-            echo "not sent";
+            echo "not sent: " . $msg;
           }
         ?>
       </center>
