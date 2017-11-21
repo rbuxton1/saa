@@ -39,26 +39,30 @@
               echo "<td><center> <input type='submit' value='Upload Image' name='submit'>
                 <input type='hidden' name='id' value='$id'></form></td>";
               echo "</tr>";
-
-              if(isset($_POST["id"])){
-                $okayID = $_POST['id'];
-                $sql = "SELECT * FROM pendingArt WHERE id = '$okayID'";
-                $row = mysqli_fetch_array(mysqli_query($db, $sql), MYSQLI_ASSOC);
-                $title = $row["title"];
-                $src = $row["src"];
-                $tags = $row["tags"];
-                $artist = $row["artist"];
-                $data = $row["data"];
-                $rate = $_POST['ratingValue' . $okayID];
-
-                $insertStatement = "INSERT INTO liveArt ('id', 'title', 'src', 'tags', 'rate', 'artist', 'data') VALUES
-                                                        (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
-                $res = mysqli_query($db, $sql);
-                echo ((string)$res);
-              }
             }
           ?>
         </table>
+        <?php
+          if(isset($_POST["id"])){
+            $okayID = $_POST['id'];
+            $sql = "SELECT * FROM pendingArt WHERE id = '$okayID'";
+            $row = mysqli_fetch_array(mysqli_query($db, $sql), MYSQLI_ASSOC);
+            $title = $row["title"];
+            $src = $row["src"];
+            $tags = $row["tags"];
+            $artist = $row["artist"];
+            $data = $row["data"];
+            $rate = $_POST['ratingValue' . $okayID];
+
+            $insertStatement = "INSERT INTO liveArt ('id', 'title', 'src', 'tags', 'rate', 'artist', 'data') VALUES
+                                                  (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
+            $res = mysqli_query($db, $sql);
+            echo "sqee " . ((string)$res);
+            //header("Reload:0");
+          } else {
+            echo "not sent";
+          }
+        ?>
       </center>
     </p>
   </body>
