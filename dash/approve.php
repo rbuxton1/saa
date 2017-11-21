@@ -64,6 +64,7 @@
             //header("Reload:0");
           } else {
             echo "not sent: " . $msg;
+            header("Refresh:5");
           }
         ?>
       </center>
