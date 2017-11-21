@@ -31,7 +31,7 @@
               echo "<td><center>" . $row['artist'] . "</center></td>";
               echo "<td><center>" . $row['tags'] . "</center></td>";
               echo "<td><center>" . $row['data'] . "</center></td>";
-              $myRating = "ratingValue" . $row['id'];
+              $myRating = "ratingValue";
               $id = $row['id'];
               echo "<td><center>
                 <form action = '' method = 'submit'>
@@ -52,7 +52,7 @@
             $tags = $row["tags"];
             $artist = $row["artist"];
             $data = $row["data"];
-            $rate = $_POST['ratingValue' . $okayID];
+            $rate = $_POST['ratingValue'];
 
             $insertStatement = "INSERT INTO liveArt ('id', 'title', 'src', 'tags', 'rate', 'artist', 'data') VALUES
                                                   (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
