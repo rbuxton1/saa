@@ -51,16 +51,18 @@
             $row = mysqli_fetch_array(mysqli_query($db, $sql), MYSQLI_ASSOC);
             $title = $row["title"];
             $src = $row["src"];
-            $tags = $row["tags"];
+            $tags = $row["tags"] . "";
             $artist = $row["artist"];
-            $data = $row["data"];
+            $data = $row["data"] . "";
             $rate = $_POST['ratingValue'];
 
-            $insertStatement = "INSERT INTO liveArt (id,   title,    src,    tags,    rate,    artist,    data) VALUES
-                                                    (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
+            $insertStatement = "INSERT INTO liveArt (id, title, src, tags, rate, artist, data) VALUES
+                                                    (NULL, '$title', '$src', NULL, '$rate', '$artist', NULL)";
             $res = mysqli_query($db, $sql);
             $msg = $sql . " // " . ((string)$res) . " // " . $insertStatement;
-            echo "sqee " . ((string)$res);
+            if($res){
+
+            }
             //header("Reload:0");
           } else {
             echo "not sent: " . $msg;
