@@ -47,6 +47,7 @@
 
           if($_SERVER["REQUEST_METHOD"] == "POST"){
             $okayID = $_POST['id'];
+            echo $okayID;
             $sql = "SELECT * FROM pendingArt WHERE id = '$okayID'";
             $row = mysqli_fetch_array(mysqli_query($db, $sql), MYSQLI_ASSOC);
             $title = $row["title"];
