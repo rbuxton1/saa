@@ -45,7 +45,7 @@
         <?php
           $msg = "!";
 
-          if(isset($_POST["submit"])){
+          if(isset($_POST['id'])){
             $okayID = $_POST['id'];
             echo $okayID;
             //header("Reload:0");
