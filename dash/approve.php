@@ -56,7 +56,7 @@
             $data = $row["data"];
             $rate = $_POST['ratingValue'];
 
-            $insertStatement = "INSERT INTO liveArt ('id', 'title', 'src', 'tags', 'rate', 'artist', 'data') VALUES
+            $insertStatement = "INSERT INTO liveArt (id, title, src, tags, rate, artist, data) VALUES
                                                   (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
             $res = mysqli_query($db, $sql);
             $msq = $sql . " // " . ((string)$res) . " // " . $insertStatement;
