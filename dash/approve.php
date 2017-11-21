@@ -43,7 +43,7 @@
           ?>
         </table>
         <?php
-          $msg = "";
+          $msg = "!";
 
           if(isset($_POST["submit"])){
             $okayID = $_POST['id'];
@@ -56,12 +56,11 @@
             $data = $row["data"];
             $rate = $_POST['ratingValue'];
 
-            $insertStatement = "INSERT INTO liveArt (id, title, src, tags, rate, artist, data) VALUES
-                                                  (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
+            $insertStatement = "INSERT INTO liveArt (id,   title,    src,    tags,    rate,    artist,    data) VALUES
+                                                    (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
             $res = mysqli_query($db, $sql);
-            $msq = $sql . " // " . ((string)$res) . " // " . $insertStatement;
+            $msg = $sql . " // " . ((string)$res) . " // " . $insertStatement;
             echo "sqee " . ((string)$res);
-            header("Refresh:5");
             //header("Reload:0");
           } else {
             echo "not sent: " . $msg;
