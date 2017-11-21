@@ -43,7 +43,7 @@
           ?>
         </table>
         <?php
-          if(isset($_POST["id"])){
+          if(isset($_POST["submit"])){
             $okayID = $_POST['id'];
             $sql = "SELECT * FROM pendingArt WHERE id = '$okayID'";
             $row = mysqli_fetch_array(mysqli_query($db, $sql), MYSQLI_ASSOC);
