@@ -61,10 +61,10 @@
             $res = mysqli_query($db, $sql);
             $msq = $sql . " // " . ((string)$res) . " // " . $insertStatement;
             echo "sqee " . ((string)$res);
+            header("Refresh:5");
             //header("Reload:0");
           } else {
             echo "not sent: " . $msg;
-            header("Refresh:5");
           }
         ?>
       </center>
