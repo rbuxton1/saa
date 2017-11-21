@@ -36,7 +36,7 @@
               echo "<td><center>
                 <form action = '' method = 'submit'>
                   <input type = 'number' name = '$myRating' class='box'> </td>";
-              echo "<td><center> <input type='submit' value='Upload Image' name='submit'>
+              echo "<td><center> <input type='submit' value='Upload'>
                 <input type='hidden' name='id' value='$id'></form></td>";
               echo "</tr>";
             }
@@ -45,7 +45,7 @@
         <?php
           $msg = "!";
 
-          if($_SERVER["REQUEST_METHOD"] == "POST"){
+          if(isset($_POST["submit"])){
             $okayID = $_POST['id'];
             echo $okayID;
             //header("Reload:0");
