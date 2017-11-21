@@ -54,7 +54,7 @@
                 $insertStatement = "INSERT INTO liveArt ('id', 'title', 'src', 'tags', 'rate', 'artist', 'data') VALUES
                                                         (NULL, '$title', '$src', '$tags', '$rate', '$artist', '$data')";
                 $res = mysqli_query($db, $sql);
-                echo $res;
+                echo ((string)$res);
               }
             }
           ?>

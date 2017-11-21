@@ -35,7 +35,7 @@
     if(!$error){ //NO error
       $hashedPass = hash('sha256', $password);
 
-      $query = "INSERT INTO user (id, email, password) VALUES (NULL, '$email', '$hashedPass')";
+      $query = "INSERT INTO user (id, email, admin, password) VALUES (NULL, '$email', '0', '$hashedPass')";
       $result = mysqli_query($db,$query);
 
       if($result){
