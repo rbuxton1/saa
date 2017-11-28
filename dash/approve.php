@@ -56,12 +56,15 @@
               $artist = $row['artist'];
               $tags = $row['tags'];
               $data = $row['data'];
+              $rate = $_POST['myRating'];
 
               $stmt = "INSERT INTO liveArt (id, title, src, tags, rate, artist, data)
-                       VALUES (NULL, '$name', '$source', '$tags', '$myRate', '$name', '$data')";
+                       VALUES (NULL, '$name', '$source', '$tags', '$rate', '$artist', '$data')";
               $sql = mysqli_query($db, $stmt);
               if($sql){
                 $stmt = "DELETE FROM pendingArt WHERE id='$okayID'";
+                mysqli_query($db, $stmt);
+                header("Reload:0");
               }
             }
 
