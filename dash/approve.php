@@ -66,11 +66,11 @@
               if($sql){
                 $stmt = "DELETE FROM pendingArt WHERE id='$okayID'";
                 mysqli_query($db, $stmt);
-                header("Reload:1");
+                header("Refresh:1");
               }
             }
 
-            header("Reload:1");
+            header("Refresh:1");
           } else {
             echo "not sent: " . $msg;
           }
