@@ -116,6 +116,7 @@
               }
             ?>
         </table>
+        <hr>
         <h2> Works waiting to be approved and rated by  <?php echo "(".$user.")"; ?> </h2> <br>
         <table border="1">
           <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
