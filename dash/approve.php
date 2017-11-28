@@ -57,7 +57,8 @@
               $artist = $row['artist'];
               $tags = $row['tags'];
               $data = $row['data'];
-              $rate = $_POST['ratingValue' . $okayID];
+              $ratingValueName = 'ratingValue' . $okayID;
+              $rate = $_POST[$ratingValueName];
 
               $stmt = "INSERT INTO liveArt (id, title, src, tags, rate, artist, data)
                        VALUES (NULL, '$name', '$source', '$tags', '$rate', '$artist', '$data')";
