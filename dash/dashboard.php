@@ -100,6 +100,22 @@
       </p>
       <hr>
       <p>
+        <h2> Works live on the SAA by  <?php echo "(".$user.")"; ?> </h2> <br>
+        <table border="1">
+          <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
+            <?php
+              $req = "SELECT * FROM liveArt WHERE artist = '$user'";
+              $sql = mysqli_query($db, $req);
+              while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+                echo "<tr>";
+                echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'>" . "</center></td>";
+                echo "<td><center>" . $row['title'] . "</center></td>";
+                echo "<td><center>" . $row['tags'] . "</center></td>";
+                echo "<td><center>" . $row['data'] . "</center></td>";
+                echo "</tr>";
+              }
+            ?>
+        </table>
         <h2> Works waiting to be approved and rated by  <?php echo "(".$user.")"; ?> </h2> <br>
         <table border="1">
           <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
