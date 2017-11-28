@@ -34,7 +34,7 @@
               $myRating = "ratingValue";
               $id = $row['id'];
               echo "<td><center>
-                <form action = '' method = 'submit'>
+                <form action = '' method = 'post'>
                   <input type = 'number' name = '$myRating' class='box'> </td>";
               echo "<td><center> <input type='submit' value='Upload'>
                 <input type='hidden' name='id' value='$id'></form></td>";
