@@ -47,7 +47,24 @@
 
           if(isset($_POST['id'])){
             $okayID = $_POST['id'];
-            echo $okayID;
+            $stmt = "SELECT * FROM pendingArt WHERE id ='$okayID'";
+            $sql = mysqli_query($db, $stmt);
+            $row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
+            if($sql){
+              $name = $row['title'];
+              $source = $row['src'];
+              $artist = $row['artist'];
+              $tags = $row['tags'];
+              $data = $row['data'];
+
+              $stmt = "INSERT INTO liveArt (id, title, src, tags, rate, artist, data)
+                       VALUES (NULL, '$name', '$source', '$tags', '$myRate', '$name', '$data')";
+              $sql = mysqli_query($db, $stmt);
+              if($sql){
+                $stmt = "DELETE FROM pendingArt WHERE id='$okayID'";
+              }
+            }
+
             //header("Reload:0");
           } else {
             echo "not sent: " . $msg;
