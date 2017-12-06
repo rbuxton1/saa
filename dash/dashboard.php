@@ -96,6 +96,7 @@
               }
             }
           }
+          header("Refresh:1");
         ?>
 
       </p>
