@@ -88,15 +88,18 @@
 
                 if($result){
                   echo 'and was uploaded to database! <br>';
+                  header("Refresh:1");
                 } else {
                   echo 'however failed to get to the database. ERR: ' . (string($result)) . "<br>";
+                  header("Refresh:1");
                 }
               } else {
                 echo "Sorry, there was an error uploading your file. ERR: (" . ((string)$possibleError) . ")<br>";
+                header("Refresh:10");
               }
             }
           }
-          header("Refresh:1");
+
         ?>
 
       </p>
