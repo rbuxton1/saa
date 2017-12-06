@@ -38,7 +38,7 @@
                 <form action = '' method = 'post'>
                   <input type = 'number' name = '$myRating' class='box'> <br>
                   <p>Possitive numbers to upload, <br> negative to remove.</p></td>";
-              echo "<td><center> <input type='submit' value='Upload'>
+              echo "<td><center> <input type='submit' value='Approve / Deny'>
                 <input type='hidden' name='id' value='$id'></form></td>";
               echo "</tr>";
             }

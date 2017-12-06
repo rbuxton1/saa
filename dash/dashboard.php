@@ -26,9 +26,9 @@
         <br>
 
         <form action="" method="post" enctype="multipart/form-data">
-          Select image to upload:
-          <input type="file" name="fileToUpload" id="fileToUpload">
-          <label>Title </label><input type="text" name="title" class="box">
+          Select image to upload: <input type="file" name="fileToUpload" id="fileToUpload"> <br>
+          <label>Title </label><input type="text" name="title" class="box"> <br>
+          <label>Description </label><input type="text" name="data" class="box"> <br>
           <input type="submit" value="Upload Image" name="submit">
         </form>
         <?php
@@ -47,6 +47,7 @@
 
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
+          $data = $_POST['data'];
 
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
           $source = generateRandomString(). "." . end((explode(".", $_FILES["fileToUpload"]["name"]))); // basename($_FILES["fileToUpload"]["name"])
@@ -82,7 +83,7 @@
               if ($possibleError) {
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded to the server... ";
 
-                $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', 'NO_TAG', NULL, '$name', NULL)";
+                $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', 'NO_TAG', NULL, '$name', '$data')";
                 $result = mysqli_query($db,$sql);
 
                 if($result){
