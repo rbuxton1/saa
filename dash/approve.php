@@ -68,8 +68,6 @@
                   $stmt = "DELETE FROM pendingArt WHERE id='$okayID'";
                   mysqli_query($db, $stmt);
 
-                  unset($id);
-                  unset($ratingValue);
                   header("Refresh:1");
                 }
               } elseif($rate < 0) {
@@ -77,8 +75,6 @@
                 $stmt = "DELETE FROM pendingArt WHERE = '$source'";
                 $sql = mysqli_query($db, $stmt);
                 if($sql){
-                  unset($id);
-                  unset($ratingValue);
                   header("Refresh:1");
                 }
               }
