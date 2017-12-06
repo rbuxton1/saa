@@ -36,7 +36,8 @@
 
               echo "<td><center>
                 <form action = '' method = 'post'>
-                  <input type = 'number' name = '$myRating' class='box'> </td>";
+                  <input type = 'number' name = '$myRating' class='box'> <br>
+                  <p>Possitive numbers to upload, <br> negative to remove.</p></td>";
               echo "<td><center> <input type='submit' value='Upload'>
                 <input type='hidden' name='id' value='$id'></form></td>";
               echo "</tr>";
@@ -72,7 +73,7 @@
                 }
               } else {
                 unlink(str_replace("dash","",getcwd()). "uploads/" . $source);
-                $stmt = "DELETE FROM pendingArt WHERE = '$source'";
+                $stmt = "DELETE FROM pendingArt WHERE src = '$source'";
                 $sql = mysqli_query($db, $stmt);
                 if($sql){
                   header("Refresh:1");
