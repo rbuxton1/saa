@@ -46,7 +46,7 @@
         <?php
           $msg = "!";
 
-          if(isset($_POST['myRating'])){
+          if(isset($_POST['id'])){
             $okayID = $_POST['id'];
             $stmt = "SELECT * FROM pendingArt WHERE id ='$okayID'";
             $sql = mysqli_query($db, $stmt);
