@@ -71,7 +71,7 @@
                   header("Refresh:1");
                 }
               } else {
-                unlink($source);
+                unlink(str_replace("dash","",getcwd()). "uploads/" . $source);
                 $stmt = "DELETE FROM pendingArt WHERE = '$source'";
                 $sql = mysqli_query($db, $stmt);
                 if($sql){
