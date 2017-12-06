@@ -70,7 +70,7 @@
 
                   header("Refresh:1");
                 }
-              } elseif($rate < 0) {
+              } else {
                 unlink($source);
                 $stmt = "DELETE FROM pendingArt WHERE = '$source'";
                 $sql = mysqli_query($db, $stmt);
@@ -79,7 +79,7 @@
                 }
               }
             }
-            
+
             header("Refresh:1");
           } else {
           }
