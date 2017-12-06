@@ -79,10 +79,7 @@
                 }
               }
             }
-
-            unset("id");
-            unset("ratingValue");
-            unset("Upload");
+            
             header("Refresh:1");
           } else {
           }
