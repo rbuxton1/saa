@@ -37,7 +37,7 @@
               echo "<td><center>
                 <form action = '' method = 'post'>
                   <input type = 'number' name = '$myRating' class='box'> </td>";
-              echo "<td><center> <input type='submit' value='Upload'>
+              echo "<td><center> <input type='submit' value='Upload' id='upload'>
                 <input type='hidden' name='id' value='$id'></form></td>";
               echo "</tr>";
             }
@@ -46,7 +46,7 @@
         <?php
           $msg = "!";
 
-          if(isset($_POST['id'])){
+          if(isset($_POST['upload'])){
             $okayID = $_POST['id'];
             $stmt = "SELECT * FROM pendingArt WHERE id ='$okayID'";
             $sql = mysqli_query($db, $stmt);
@@ -66,13 +66,19 @@
               if($sql){
                 $stmt = "DELETE FROM pendingArt WHERE id='$okayID'";
                 mysqli_query($db, $stmt);
+
+                unset("id");
+                unset("ratingValue");
+                unset("Upload");
                 header("Refresh:1");
               }
             }
 
+            unset("id");
+            unset("ratingValue");
+            unset("Upload");
             header("Refresh:1");
           } else {
-            echo "not sent: " . $msg;
           }
         ?>
       </center>
