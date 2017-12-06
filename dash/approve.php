@@ -37,7 +37,7 @@
               echo "<td><center>
                 <form action = '' method = 'post'>
                   <input type = 'number' name = '$myRating' class='box'> </td>";
-              echo "<td><center> <input type='submit' value='Upload' id='upload'>
+              echo "<td><center> <input type='submit' value='Upload'>
                 <input type='hidden' name='id' value='$id'></form></td>";
               echo "</tr>";
             }
@@ -46,7 +46,7 @@
         <?php
           $msg = "!";
 
-          if(isset($_POST['upload'])){
+          if(isset($_POST['myRating'])){
             $okayID = $_POST['id'];
             $stmt = "SELECT * FROM pendingArt WHERE id ='$okayID'";
             $sql = mysqli_query($db, $stmt);
@@ -60,17 +60,29 @@
               $ratingValueName = 'ratingValue' . $okayID;
               $rate = $_POST[$ratingValueName];
 
-              $stmt = "INSERT INTO liveArt (id, title, src, tags, rate, artist, data)
-                       VALUES (NULL, '$name', '$source', '$tags', '$rate', '$artist', '$data')";
-              $sql = mysqli_query($db, $stmt);
-              if($sql){
-                $stmt = "DELETE FROM pendingArt WHERE id='$okayID'";
-                mysqli_query($db, $stmt);
+              if($rate >= 0){
+                $stmt = "INSERT INTO liveArt (id, title, src, tags, rate, artist, data)
+                          VALUES (NULL, '$name', '$source', '$tags', '$rate', '$artist', '$data')";
+                $sql = mysqli_query($db, $stmt);
+                if($sql){
+                  $stmt = "DELETE FROM pendingArt WHERE id='$okayID'";
+                  mysqli_query($db, $stmt);
 
-                unset("id");
-                unset("ratingValue");
-                unset("Upload");
-                header("Refresh:1");
+                  unset("id");
+                  unset("ratingValue");
+                  unset("Upload");
+                  header("Refresh:1");
+                }
+              } elseif($rate < 0) {
+                unlink($source);
+                $stmt = "DELETE FROM pendingArt WHERE = '$source'";
+                $sql = mysqli_query($db, $stmt);
+                if($sql){
+                  unset("id");
+                  unset("ratingValue");
+                  unset("Upload");
+                  header("Refresh:1");
+                }
               }
             }
 
