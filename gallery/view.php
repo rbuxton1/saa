@@ -5,8 +5,9 @@
   <body>
     <center>
       <?php
-        if(isset($_GET['id'])){
-          $id = $_GET['id'];
+        $id = $_GET['id'];
+
+        if($id != 0){
           $stmt = "SELECT * FROM liveArt WHERE id = '$id'";
           $sql = mysqli_query($db, $stmt);
           if($sql){
