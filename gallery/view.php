@@ -24,7 +24,7 @@
           }
         }
         if($artist != null){
-          echo("<h1>All art by " . $artist . "</hr><br><br><br>");
+          echo("<h1>All art by " . $artist . "</h1><br><br><br>");
           $stmt = "SELECT * FROM liveArt WHERE artist = '$artist'";
           $sql = mysqli_query($db, $stmt);
           if($sql){
