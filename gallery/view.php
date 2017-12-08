@@ -16,13 +16,15 @@
             echo("
               <table border=0>
                 <tr><img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'></tr>
-                <tr><p><i>" . $row['title'] . " </i></p></tr>
+                <tr><p><i>" . $row['title'] . "<br>
+                  By: " . $row['artist'] . "</i></p></tr>
                 <tr><p><i>By " . $row['artist'] ." </p></i></tr>
                 <tr><p>Description: <br> " . $row['data'] . " </p></tr>
               </table>");
           }
         }
         if($artist != null){
+          echo("<h1>All art by " . $artist . "</hr><br><br><br>");
           $stmt = "SELECT * FROM liveArt WHERE artist = '$artist'";
           $sql = mysqli_query($db, $stmt);
           if($sql){
@@ -30,8 +32,8 @@
               echo("
                 <table border=0>
                   <tr><img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'></tr>
-                  <tr><p><i>" . $row['title'] . " </i></p></tr>
-                  <tr><p><i>By " . $row['artist'] ." </p></i></tr>
+                  <tr><p><i>" . $row['title'] . "<br>
+                    By: " . $row['artist'] . "</i></p></tr>
                   <tr><p>Description: <br> " . $row['data'] . " </p></tr>
                 </table>
                 <hr>");
