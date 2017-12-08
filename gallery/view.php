@@ -10,10 +10,14 @@
           $stmt = "SELECT * FROM liveArt WHERE id = '$id'";
           $sql = mysqli_query($db, $stmt);
           if($sql){
+            $row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
+            $imgSrc = $row['src'];
 
           }
+
+          echo("<img src = '$imgSrc'></img>");
         }
       ?>
     </center>
   </body>
-</html>  
+</html>
