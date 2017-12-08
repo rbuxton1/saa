@@ -16,7 +16,13 @@
 
           }
 
-          echo("<img src = '../uploads/" . $row['src'] . "'>");
+          echo("
+            <table border=0>
+              <tr><img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'></tr>
+              <tr><p><i>" . $row['title'] . " </i></p></tr>
+              <tr><p><i>By " . $row['artist'] ." </p></i></tr>
+              <tr><p>Description: <br> " . $row['data'] . " </p></tr> 
+            ");
         }
       ?>
     </center>
