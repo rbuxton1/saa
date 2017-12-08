@@ -5,8 +5,8 @@
   <body>
     <center>
       <?php
-        if(isset($_POST['id'])){
-          $id = $_POST['id'];
+        if(isset($_GET['id'])){
+          $id = $_GET['id'];
           $stmt = "SELECT * FROM liveArt WHERE id = '$id'";
           $sql = mysqli_query($db, $stmt);
           if($sql){
@@ -15,7 +15,7 @@
 
           }
 
-          echo("<img src = '$imgSrc'></img>");
+          echo("<img src = '../uploads/" . $row['src'] . "'></img>");
         }
       ?>
     </center>
