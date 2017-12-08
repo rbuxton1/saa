@@ -1,5 +1,5 @@
 <?php
-  include('config.php');
+  include('../dash/config.php');
 ?>
 <html>
   <body>
@@ -16,7 +16,7 @@
 
           }
 
-          echo("<img src = '../uploads/" . $row['src'] . "'></img>");
+          echo("<img src = '../uploads/" . $row['src'] . "'>");
         }
       ?>
     </center>
