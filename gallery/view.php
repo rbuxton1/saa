@@ -18,7 +18,6 @@
                 <tr><img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'></tr>
                 <tr><p><i>" . $row['title'] . "<br>
                   By: " . $row['artist'] . "</i></p></tr>
-                <tr><p><i>By " . $row['artist'] ." </p></i></tr>
                 <tr><p>Description: <br> " . $row['data'] . " </p></tr>
               </table>");
           }
