@@ -21,7 +21,7 @@
                 <tr><p><i>By " . $row['artist'] ." </p></i></tr>
                 <tr><p>Description: <br> " . $row['data'] . " </p></tr>
               ");
-            echo($artist);
+            echo("<p>"($artist == null));
           }
         }
 
