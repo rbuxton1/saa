@@ -7,8 +7,8 @@
   </head>
   <body>
     <center>
-      <img src="saa.png"></img>
-      <?php echo "SAA " . $version; ?>
+      <img src="saa.png"></img> <br>
+      <i><?php echo "SAA " . $version; ?></i>
       <br> <br> <br>
 
       <p>
