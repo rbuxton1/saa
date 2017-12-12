@@ -29,7 +29,9 @@
   </head>
   <center>
     <h1> SAA Login </h1>
-    <p> login form here </p>
+    <p> login form here </p><br>
+    Click <a href="../index.php">here</a> to back out to the main page. <br>
+    Click <a href="register.php">here</a> to register for an account. <br>
     <form action = "" method = "post">
       <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
       <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />

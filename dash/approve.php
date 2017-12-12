@@ -19,6 +19,7 @@
     <h1> Recent submissions </h1>
     <p>
       <center>
+        Click <a href="dashboad.php">here</a> to go back to your dashboard.<br>
         <table border="1">
           <tr><th>Image</th> <th>Title</th> <th>Artist</th> <th>Tags</th> <th>Extra Data</th> <th>Rating</th> <th>Send to live</th></tr>
           <?php
