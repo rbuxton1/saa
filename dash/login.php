@@ -30,7 +30,7 @@
   <center>
     <h1> SAA Login </h1>
     <form action = "" method = "post">
-      <table border="1">
+      <table border="0">
         <tr>
           <td><label>Username</label></td> <td><input type = "text" name = "username" class = "box"></td>
         </tr><tr>
