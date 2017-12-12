@@ -33,7 +33,7 @@
             </tr><tr>
               <td><label>Title</label></td> <td><input type="text" name="title" class="box"></td>
             </tr><tr>
-              <td><label>Description</label></td> <td><input style="height:200px;" type="text" name="data" class="box"></td>
+              <td><label>Description</label></td> <td><input style="height:100px;" type="text" name="data" class="box"></td>
             </tr>
           </table>
           <input type="submit" value="Upload Image" name="submit">
