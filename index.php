@@ -3,7 +3,7 @@
 ?>
 <html>
   <head>
-    <title>SAA</title>
+    <title>SAA Main Page</title>
   </head>
   <body>
     <center>
@@ -17,7 +17,7 @@
         <a href="/gallery/view.php">Gallery page test</a>
         <hr>
         Student Art Archive version 1.0.0 &emsp;
-        Built and maintained by Ryan Buxton and Curtis Worthy &emsp;
+        <a href="https://github.com/rbuxton1/saa/wiki">Built and maintained by Ryan Buxton and Curtis Worthy</a> &emsp;
         Senior Project 2017-2018 OHS
       </center>
     </body>
