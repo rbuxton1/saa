@@ -7,7 +7,7 @@
   </head>
   <body>
     <center>
-      <img src="saa.png"></img> <br>
+      <img src="assets/saa.png"></img> <br>
       <i><?php echo "SAA " . $version; ?></i>
       <br> <br> <br>
 
