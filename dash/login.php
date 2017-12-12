@@ -29,16 +29,17 @@
   </head>
   <center>
     <h1> SAA Login </h1>
-    <table border="1">
-      <form action = "" method = "post">
+    <form action = "" method = "post">
+      <table border="1">
         <tr>
           <td><label>Username</label></td> <td><input type = "text" name = "username" class = "box"></td>
         </tr><tr>
           <td><label>Password</label></td> <td><input type = "password" name = "password" class = "box"></td>
         </tr>
-        <input type = "submit" value = " Submit "><br>
-      </form>
-    </table>
+      </table>
+      <input type = "submit" value = " Submit "><br>
+    </form>
+
 
     Click <a href="../index.php">here</a> to back out to the main page. <br>
     Click <a href="register.php">here</a> to register for an account. <br>
