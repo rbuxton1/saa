@@ -27,9 +27,15 @@
         <br>
 
         <form action="" method="post" enctype="multipart/form-data">
-          Select image to upload: <input type="file" name="fileToUpload" id="fileToUpload"> <br>
-          <label>Title </label><input type="text" name="title" class="box"> <br>
-          <label>Description </label><input type="text" name="data" class="box"> <br>
+          <table>
+            <tr>
+              <td>Select image to upload</td> <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
+            </tr><tr>
+              <td><label>Title</label></td> <td><input type="text" name="title" class="box"></td>
+            </tr><tr>
+              <td><label>Description</label></td> <td><input style="height:200px;" type="text" name="data" class="box"></td>
+            </tr>
+          </table>
           <input type="submit" value="Upload Image" name="submit">
         </form>
         <?php
