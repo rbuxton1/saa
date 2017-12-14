@@ -52,10 +52,6 @@
             return $randomString;
           }
 
-          function clean($string) {
-            return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-          }
-
           $name = $_SESSION['login_user'];
           $title = clean($_POST['title']);
           $data = clean($_POST['data']);
