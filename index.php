@@ -23,11 +23,11 @@
     </header>
 
     <hr>
-    <div class="w3-row-padding">
+    <div class="w3-row-padding w3-center w3-margin-top">
       <div class="w3-third"> </div>
       <div class="w3-third">
         <div class="w3-card">
-          <img src="assets/saa.png" alt="Car" style="width:100%">
+          <img src="assets/saa.png" alt="SAA" style="width:100%">
         </div>
       </div>
       <div class="w3-third"> </div>
