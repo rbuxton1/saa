@@ -1,0 +1,2 @@
+# SAA
+SAA (short for Student Art Archive) is the combined efforts of Ryan Buxton (rbuxton1) and Curtis Worthy (cheezosis) durring the 2017-2018 school year. The project is a student works database that holds all the work of the photography and art students so that they have a portfolio to show off. It is currently in development but should be finished by the end of the 2018 school year and hopefully will be in use by the Cherry Creek School District.
