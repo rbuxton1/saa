@@ -23,7 +23,7 @@
     </header>
 
     <hr>
-    <div class="w3-center">
+    <div class="w3-row-padding">
       <div class="w3-third"> </div>
       <div class="w3-third">
         <div class="w3-card">
