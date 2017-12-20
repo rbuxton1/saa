@@ -22,18 +22,9 @@
       </div>
     </header>
 
-    <hr>
-    <div class="w3-row-padding w3-center w3-margin-top">
-      <div class="w3-third"> </div>
-      <div class="w3-third">
-        <div class="w3-card">
-          <img src="assets/saa.png" alt="SAA" style="width:100%">
-        </div>
-      </div>
-      <div class="w3-third"> </div>
-    </div>
-    <br>
+    <!-- Body -->
     <div class="w3-center">
+      <img src="assets/saa.png" alt="SAA" style="width:25%">
       <p class="w3-large">
         SAA by by Curtis Worthy and Ryan Buxton is a database meant to help students show off the work that they create at OHS in the arts program.
       </p>
