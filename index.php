@@ -21,6 +21,7 @@
         </div>
       </div>
     </header>
+    <hr><br>
 
     <!-- Body -->
     <div class="w3-center">
