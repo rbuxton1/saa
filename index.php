@@ -24,11 +24,13 @@
 
     <hr>
     <div class="w3-center">
+      <div class="w3-third"> </div>
       <div class="w3-third">
         <div class="w3-card">
-          <img src="assets/saa.png" alt="Car" style="width:50%">
+          <img src="assets/saa.png" alt="Car" style="width:100%">
         </div>
       </div>
+      <div class="w3-third"> </div>
     </div>
     <div class="w3-center">
       <p class="w3-large">
