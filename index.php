@@ -32,6 +32,7 @@
       </div>
       <div class="w3-third"> </div>
     </div>
+    <br>
     <div class="w3-center">
       <p class="w3-large">
         SAA by by Curtis Worthy and Ryan Buxton is a database meant to help students show off the work that they create at OHS in the arts program.
