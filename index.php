@@ -22,13 +22,24 @@
       </div>
     </header>
 
+    <hr>
+    <div class="w3-center">
+      <div class="w3-card">
+        <img src="assets/saa.png" alt="Car" style="width:50%">
+      </div>
+      <p class="w3-large">
+        SAA by by Curtis Worthy and Ryan Buxton is a database meant to help students show off the work that they create at OHS in the arts program.
+      </p>
+    </div>
+    <br>
+
     <!-- Footer -->
     <footer class="w3-container w3-theme-dark w3-padding-16">
       <h3>Footer</h3>
       <p>
-        Student Art Archive version 1.0.0 <hr>
-        <a href="https://github.com/rbuxton1/saa/wiki">Built and maintained by Ryan Buxton and Curtis Worthy</a> <hr>
-        Senior Project 2017-2018 OHS <hr>
+        Student Art Archive version 1.0.0 <br>
+        <a href="https://github.com/rbuxton1/saa/wiki">Built and maintained by Ryan Buxton and Curtis Worthy</a> <br>
+        Senior Project 2017-2018 OHS <br>
         Theme by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
       </p>
       <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
