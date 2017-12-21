@@ -39,6 +39,7 @@
           <input type="submit" value="Upload Image" name="submit">
         </form>
         <?php
+          include('config.php');
 
           function generateRandomString($length = 10) {
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
