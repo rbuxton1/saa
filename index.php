@@ -56,7 +56,7 @@
             $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
             $sql = mysqli_query($db, $req);
             $row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
-            echo "<img src='uploads/" . $row['src'] . "' alt='Missing image?' style='width:100%'><br>";
+            echo "<a href='/gallery/view.php?id=" . $row['id'] . "'><img src='uploads/" . $row['src'] . "' alt='Missing image?' style='width:100%' class='w3-hover-opacity'></a><br>";
             echo "<i>" . $row['title'] . "</i> by " . $row['artist'];
           ?>
         </p>
@@ -67,7 +67,7 @@
             $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
             $sql = mysqli_query($db, $req);
             $row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
-            echo "<img src='uploads/" . $row['src'] . "' alt='Missing image?' style='width:100%'><br>";
+            echo "<a href='/gallery/view.php?id=" . $row['id'] . "'><img src='uploads/" . $row['src'] . "' alt='Missing image?' style='width:100%' class='w3-hover-opacity'></a><br>";
             echo "<i>" . $row['title'] . "</i> by " . $row['artist'];
           ?>
         </p>
