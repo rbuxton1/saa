@@ -50,10 +50,13 @@
             }
             return $randomString;
           }
+          function clean($string) {
+            return preg_replace("/[^A-Za-z0-9\-]:;'/", '', $string); // Removes special chars.
+          }
 
           $name = $_SESSION['login_user'];
-          $title = htmlspecialchars($_POST['title']);
-          $data = htmlspecialchars($_POST['data']);
+          $title = htmlspecialchars(clean($_POST['title']));
+          $data = htmlspecialchars(clean($_POST['data']));
 
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
           $source = generateRandomString(). "." . end((explode(".", $_FILES["fileToUpload"]["name"]))); // basename($_FILES["fileToUpload"]["name"])
