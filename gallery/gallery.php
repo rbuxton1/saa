@@ -31,7 +31,7 @@
         <form action="" method="post" class="w3-container">
           <label>Search term</label>
           <input class="w3-input" type="text" name="terms">
-          <input type="submit" value="Upload Image" name="submit">
+          <input type="submit" class="w3-btn" value="Search" name="submit">
         </form>
     </div>
 
@@ -52,7 +52,7 @@
       generateCard(1, "../uploads/b8AqqY9EQC.png", "lad", "me", "test");
 
       if(isset($_POST["terms"])) {
-        $terms = "%" . $terms . "%";
+        $terms = "%" . $_POST['terms'] . "%";
         $req = "SELECT * FROM liveArt WHERE artist LIKE '" . $terms . "' OR title LIKE '" . $terms . "' OR data LIKE '" . $terms . "'";
         $sql = mysqli_query($db,$req);
         echo "<p>" . $sql . "</p>";
