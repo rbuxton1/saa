@@ -31,7 +31,7 @@
         <form action="" method="post" class="w3-container">
           <label>Search term</label>
           <input class="w3-input" type="text" name="terms">
-          <input type="submit" class="w3-btn w3-green" name="search">Search</button>
+          <button class="w3-btn w3-green" name="search">Search</button>
         </form>
     </div>
 
@@ -49,7 +49,7 @@
         ";
       }
 
-      if(isset($_POST["search"])) {
+      if(isset($_POST["terms"])) {
         $req = "SELECT * FROM liveArt WHERE artist LIKE '%" . $terms . "%' OR title LIKE '%" . $terms . "%' OR data LIKE '%" . $terms . "%'";
         $sql = mysqli_query($db,$req);
 
