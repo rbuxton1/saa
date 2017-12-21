@@ -31,7 +31,7 @@
         <form action="" method="post" class="w3-container">
           <label>Search term</label>
           <input class="w3-input" type="text" name="terms">
-          <button class="w3-btn w3-green" name="search">Search</button>
+          <input type="submit" value="Upload Image" name="submit">
         </form>
     </div>
 
@@ -49,7 +49,7 @@
         ";
       }
 
-      generateCard(1, "b8AqqY9EQC.png", "lad", "me", "test");
+      generateCard(1, "../uploads/b8AqqY9EQC.png", "lad", "me", "test");
 
       if(isset($_POST["terms"])) {
         $terms = "%" . $terms . "%";
