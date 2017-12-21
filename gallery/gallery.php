@@ -1,5 +1,5 @@
 <?php
-  include("dash/config.php");
+  include("../dash/config.php");
 ?>
 ​<html>
   <title>SAA</title>
