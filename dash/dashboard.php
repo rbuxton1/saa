@@ -70,6 +70,8 @@
           $title = clean($title . "");
           $data = clean($data . "");
 
+          echo $data . "<br>";
+
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
           $source = generateRandomString(). "." . end((explode(".", $_FILES["fileToUpload"]["name"]))); // basename($_FILES["fileToUpload"]["name"])
 
