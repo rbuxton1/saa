@@ -32,6 +32,7 @@
     </div>
     <br>
 
+    <hr>
     <div class="w3-center">
       <p class="w3-large">
         Some random works from SAA!
