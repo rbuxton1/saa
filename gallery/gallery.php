@@ -42,7 +42,7 @@
       function generateCard($id, $src, $title, $artist, $data){
         echo "
         <div class='w3-card-4'>
-          <div class='w3-container w3-light-grey'>
+          <div class='w3-container w3-dark-grey'>
             <h2>" . $title . "</h2>
           </div>
           <a href='view.php?id=" . $id . "'><img src='../uploads/" . $src . "' alt='missing image' style='width:50%'></a>
