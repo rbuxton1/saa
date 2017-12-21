@@ -31,7 +31,7 @@
         <form action="" method="post" class="w3-container">
           <label>Search term</label>
           <input class="w3-input" type="text" name="terms">
-          <button class="w3-btn w3-green" name="search">Search</button>
+          <input type="submit" class="w3-btn w3-green" name="search">Search</button>
         </form>
     </div>
 
