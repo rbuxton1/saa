@@ -46,6 +46,7 @@
             <p><i>" . $title . "</i> by: " . $artist . " <br> " . $data . "</p>
           </div>
         </div>
+        <br>
         ";
       }
 
