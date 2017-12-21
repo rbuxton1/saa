@@ -55,6 +55,7 @@
       }
 
       if(isset($_POST["terms"])) {
+        echo "<p class='w3-large'> Searching '" . $_POST['terms'] . "'</p>";
         $terms = "%" . $_POST['terms'] . "%";
         $req = "SELECT * FROM liveArt WHERE artist LIKE '" . $terms . "' OR title LIKE '" . $terms . "' OR data LIKE '" . $terms . "'";
         $sql = mysqli_query($db,$req);
