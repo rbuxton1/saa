@@ -25,7 +25,7 @@
 
     <!-- Body -->
     <div class="w3-center">
-      <h4> check these out! </h4>
+      <h4> Whats happening on SAA? </h4>
     </div>
     <div class="w3-row w3-border">
       <div class="w3-third w3-container w3-red">
