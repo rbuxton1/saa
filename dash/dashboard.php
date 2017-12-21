@@ -51,8 +51,8 @@
           }
 
           $name = $_SESSION['login_user'];
-          $title = htmlspecialchars($_POST['title']);
-          $data = htmlspecialchars($_POST['data']);
+          $title = ($_POST['title']);
+          $data = ($_POST['data']);
 
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
           $source = generateRandomString(). "." . end((explode(".", $_FILES["fileToUpload"]["name"]))); // basename($_FILES["fileToUpload"]["name"])
