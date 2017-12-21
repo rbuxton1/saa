@@ -28,7 +28,7 @@
       <h4> Whats happening on SAA? </h4>
     </div>
     <div class="w3-row w3-border">
-      <div class="w3-third w3-container w3-red">
+      <div class="w3-third w3-container w3-red w3-animate-left">
         <p>
           <?php
             $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
@@ -39,7 +39,7 @@
           ?>
         </p>
       </div>
-      <div class="w3-third w3-container w3-blue">
+      <div class="w3-third w3-container w3-blue w3-animate-bottom">
         <p>
           <?php
             $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
@@ -50,7 +50,7 @@
           ?>
         </p>
       </div>
-      <div class="w3-third w3-container w3-green">
+      <div class="w3-third w3-container w3-green w3-animate-right">
         <p>
           <?php
             $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
