@@ -17,6 +17,7 @@
         <h1 class="w3-xxxlarge w3-animate-bottom">SAA <?php echo $version; ?></h1>
         <div class="w3-padding-32">
           <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="location.href='dash/login.php'" style="font-weight:900;">LOGIN</button>
+          <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="" style="font-weight:900;">GALLERY (WIP)</button>
         </div>
       </div>
     </header>
