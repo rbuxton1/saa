@@ -43,7 +43,7 @@
             $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
             $sql = mysqli_query($db, $req);
             $row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
-            echo "<img src='uploads/" . $row['src'] . "' alt='Missing image?' style='width:100%'><br>";
+            echo "<img src='uploads/" . $row['src'] . "' alt='Missing image?' style='height:100%'><br>";
             echo "<i>" . $row['title'] . "</i> by " . $row['artist'];
           ?>
         </p>
@@ -60,7 +60,7 @@
         </p>
       </div>
     </div>
-    <br>
+    <hr>
 
     <div class="w3-center">
       <img src="assets/saa.png" alt="SAA" style="width:25%">
