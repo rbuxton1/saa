@@ -55,7 +55,7 @@
         $terms = "%" . $_POST['terms'] . "%";
         $req = "SELECT * FROM liveArt WHERE artist LIKE '" . $terms . "' OR title LIKE '" . $terms . "' OR data LIKE '" . $terms . "'";
         $sql = mysqli_query($db,$req);
-        echo "<p>" . $sql . "</p>";
+        echo "<div class='w3-container'><p>" . $sql . "</p></div>";
         while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
           generateCard($row['id'], $row['src'], $row['title'], $row['artist'], $row['data']);
         }
