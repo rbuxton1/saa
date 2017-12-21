@@ -96,6 +96,7 @@
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded to the server... ";
 
                 $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, $title, $source, 'NO_TAG', NULL, $name, $data)";
+                echo "SQL: " . $sql;
                 $result = mysqli_query($db,$sql);
 
                 if($result){
