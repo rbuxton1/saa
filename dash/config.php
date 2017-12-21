@@ -6,7 +6,4 @@
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE); //Global database to be used by all php scripts
    $version = "v1.0.0 ALPHA";
 
-   function clean($string) { //
-     return preg_replace('/[^A-Za-z0-9\-]:;/', '', $string);
-   }
 ?>
