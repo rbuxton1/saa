@@ -11,7 +11,7 @@
   <body>
 
     <!-- Header -->
-    <header class="w3-container w3-theme w3-padding">
+    <header class="w3-container w3-theme w3-padding" id="myHeader">
       <div class="w3-center">
         <h4>STUDENT ART ARCHIVE</h4>
         <h1 class="w3-xxxlarge w3-animate-bottom">SAA <?php echo $version; ?></h1>
