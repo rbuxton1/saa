@@ -54,12 +54,10 @@
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
           $data = $_POST['data'];
-          echo ">>> '" . $data . "'<br>";
 
+          //clean out the garbage
           $title = preg_replace("/[^a-zA-Z0-9\s]/", "", $title);
           $data = preg_replace("/[^a-zA-Z0-9\s]/", "", $data);
-
-          echo ">>> '" . $data . "'<br>";
 
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
           $source = generateRandomString(). "." . end((explode(".", $_FILES["fileToUpload"]["name"]))); // basename($_FILES["fileToUpload"]["name"])
@@ -96,7 +94,6 @@
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded to the server... ";
 
                 $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', 'NO_TAG', NULL, '$name', '$data')";
-                echo "SQL: " . $sql;
                 $result = mysqli_query($db,$sql);
 
                 if($result){
