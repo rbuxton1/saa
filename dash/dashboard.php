@@ -50,27 +50,16 @@
             }
             return $randomString;
           }
-          function clean($input) {
-            $search = array(
-              '@<script[^>]*?>.*?</script>@si',   // Strip out javascript
-              '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
-              '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
-              '@<![\s\S]*?--[ \t\n\r]*>@',         // Strip multi-line comments
-              "'" //remove these boys
-            );
-
-            $output = preg_replace($search, '', $input);
-            return $output;
-          }
 
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
           $data = $_POST['data'];
+          echo ">>> '" . $data . "'<br>";
 
-          $title = clean($title . "");
-          $data = clean($data . "");
+          $title = preg_replace("/[^a-zA-Z0-9\s]/", "", $title);
+          $data = preg_replace("/[^a-zA-Z0-9\s]/", "", $data);
 
-          echo ">> '" . $data . "'<br>";
+          echo ">>> '" . $data . "'<br>";
 
           $target_dir = str_replace("dash","",getcwd()). "uploads/";
           $source = generateRandomString(). "." . end((explode(".", $_FILES["fileToUpload"]["name"]))); // basename($_FILES["fileToUpload"]["name"])
