@@ -14,7 +14,9 @@
     <header class="w3-container w3-theme w3-padding" id="myHeader">
       <div class="w3-center">
         <h4>SAA <?php echo $version; ?></h4>
-        <h1 class="w3-xxxlarge w3-animate-top">STUDENT ART ARCHIVE</h1>
+        <!-- <h1 class="w3-xxxlarge w3-animate-top">STUDENT ART ARCHIVE</h1> -->
+        <img src="assets/saa2.png" alt="SAA" style="width:40%">
+        <h4>Student Art Archive</h4>
         <div class="w3-padding-32">
           <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="location.href='dash/login.php'" style="font-weight:900;">LOGIN</button> <br> <br>
           <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="" style="font-weight:900;">GALLERY (WIP)</button>
