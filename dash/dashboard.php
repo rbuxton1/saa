@@ -55,7 +55,8 @@
               '@<script[^>]*?>.*?</script>@si',   // Strip out javascript
               '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
               '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
-              '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments
+              '@<![\s\S]*?--[ \t\n\r]*>@',         // Strip multi-line comments
+              "'" //remove these boys
             );
 
             $output = preg_replace($search, '', $input);
@@ -100,7 +101,7 @@
               if ($possibleError) {
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded to the server... ";
 
-                $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', 'NO_TAG', NULL, '$name', '$data')";
+                $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, $title, $source, 'NO_TAG', NULL, $name, $data)";
                 $result = mysqli_query($db,$sql);
 
                 if($result){
