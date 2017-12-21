@@ -24,6 +24,44 @@
     <hr><br>
 
     <!-- Body -->
+
+    <div class="w3-row w3-border">
+      <div class="w3-third w3-container w3-red">
+        <p>
+          <?php
+            $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
+            $sql = mysqli_query($db, $req);
+            $row = mysqli_fetch_array($sql, MYSQLI_ASSOC)
+            echo "<img src='uploads/" . $row['src'] . "' alt='Missing image?' style='width:100%'><br>";
+            echo "<i>" . $row['title'] . "</i> by " . $row['artist'];
+          ?>
+        </p>
+      </div>
+      <div class="w3-third w3-container w3-blue">
+        <p>
+          <?php
+            $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
+            $sql = mysqli_query($db, $req);
+            $row = mysqli_fetch_array($sql, MYSQLI_ASSOC)
+            echo "<img src='uploads/" . $row['src'] . "' alt='Missing image?' style='width:100%'><br>";
+            echo "<i>" . $row['title'] . "</i> by " . $row['artist'];
+          ?>
+        </p>
+      </div>
+      <div class="w3-third w3-container w3-green">
+        <p>
+          <?php
+            $req = "SELECT * FROM liveArt ORDER BY RAND() LIMIT 1";
+            $sql = mysqli_query($db, $req);
+            $row = mysqli_fetch_array($sql, MYSQLI_ASSOC)
+            echo "<img src='uploads/" . $row['src'] . "' alt='Missing image?' style='width:100%'><br>";
+            echo "<i>" . $row['title'] . "</i> by " . $row['artist'];
+          ?>
+        </p> 
+      </div>
+    </div>
+    <br>
+
     <div class="w3-center">
       <img src="assets/saa.png" alt="SAA" style="width:25%">
       <p class="w3-large">
