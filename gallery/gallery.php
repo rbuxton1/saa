@@ -49,8 +49,11 @@
         ";
       }
 
+      generateCard(1, "b8AqqY9EQC.png", "lad", "me", "test");
+
       if(isset($_POST["terms"])) {
-        $req = "SELECT * FROM liveArt WHERE artist LIKE '%" . $terms . "%' OR title LIKE '%" . $terms . "%' OR data LIKE '%" . $terms . "%'";
+        $terms = "%" . $terms . "%";
+        $req = "SELECT * FROM liveArt WHERE artist LIKE '" . $terms . "' OR title LIKE '" . $terms . "' OR data LIKE '" . $terms . "'";
         $sql = mysqli_query($db,$req);
 
         while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
