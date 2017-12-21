@@ -41,15 +41,13 @@
       function generateCard($id, $src, $title, $artist, $data){
         echo "
         <div class='w3-card-4'>
-          <a href='view.php?id=" . $id . "'><img src='../uploads/" . $src . "' alt='missing image'></a>
+          <a href='view.php?id=" . $id . "'><img src='../uploads/" . $src . "' alt='missing image' style='width:100%'></a>
           <div class='w3-container w3-center'>
             <p><i>" . $title . "</i> by: " . $artist . " <br> " . $data . "</p>
           </div>
         </div>
         ";
       }
-
-      generateCard(1, "b8AqqY9EQC.png", "lad", "me", "test");
 
       if(isset($_POST["terms"])) {
         $terms = "%" . $_POST['terms'] . "%";
