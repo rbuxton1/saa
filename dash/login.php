@@ -33,12 +33,12 @@
   </head>
   <div class="w3-display-container">
     <div class="w3-display-middle">
-      <div class="w3-container">
+      <div class="w3-container w3-center">
+        <div class="w3-black">
+          <img src="../assets/saa2.png" alt="SAA" style="width:50%">
+          <p class="w3-small">SAA login</p>
+        </div>
         <form action = "" method = "post">
-          <div class="w3-black">
-            <img src="../assets/saa2.png" alt="SAA" style="width:50%">
-            <p class="w3-small">SAA login</p>
-          </div>
           <label>Username</label><input type="text" name="username" class="w3-input">
           <label>Password</label><input type="password" name="password" class="w3-input">
           <input type = "submit" value = "Login" class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey">
