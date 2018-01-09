@@ -33,7 +33,7 @@
   </head>
   <div class="w3-display-container">
     <div class="w3-display-middle">
-      <div class="w3-card">
+      <div class="w3-card w3-container">
         <form action = "" method = "post">
           <div class="w3-black">
             <img src="../assets/saa2.png" alt="SAA" style="width:50%">
