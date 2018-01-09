@@ -35,7 +35,7 @@
     <footer class="w3-container w3-theme-dark w3-padding-16">
       <p>
         <div class="w3-center">
-          Student Art Archive version 1.0.0 &emsp; <a href="https://github.com/rbuxton1/saa/wiki">Built and maintained by Ryan Buxton and Curtis Worthy</a> &emsp; Senior Project 2017-2018 OHS <br>
+          Student Art Archive version <?php echo $version?> &emsp; <a href="https://github.com/rbuxton1/saa/wiki">Built and maintained by Ryan Buxton and Curtis Worthy</a> &emsp; Senior Project 2017-2018 OHS <br>
           Theme by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
           <br> <br>
           <i> SAA, dude! </i>
