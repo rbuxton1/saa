@@ -35,10 +35,10 @@
         <label>Password</label><input type="password" name="password" class="w3-input">
         <input type = "submit" value = "Login" class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey">
       </form>
-      <p class="w3-large">
+      <footer class="w3-container w3-black">
         Click <a href="../index.php">here</a> to back out to the main page. <br>
         Click <a href="register.php">here</a> to register for an account. <br>
-      </p>
+      </footer>
     </div>
   </div>
 </html>
