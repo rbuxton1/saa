@@ -33,7 +33,7 @@
   </head>
   <div class="w3-display-container w3-light-grey" style="height:100%; width:100%">
     <div class="w3-display-middle">
-      <div class="w3-container w3-center w3-card">
+      <div class="w3-container w3-center w3-card" style="height:40%;">
         <div class="w3-black">
           <img src="../assets/saa2.png" alt="SAA" style="width:50%">
           <p class="w3-small">SAA login</p>
