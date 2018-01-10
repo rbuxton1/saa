@@ -33,10 +33,9 @@
   </head>
   <div class="w3-display-container w3-light-grey" style="height:100%; width:100%">
     <div class="w3-display-middle">
-      <div class="w3-container w3-center w3-card" style="height:40%;">
+      <div class="w3-center w3-card" style="width:300px;">
         <div class="w3-black">
-          <img src="../assets/saa2.png" alt="SAA" style="width:50%">
-          <p class="w3-small">SAA login</p>
+          <p class="w3-xxlarge">SAA LOGIN</p>
         </div>
         <form action = "" method = "post">
           <label>Username</label><input type="text" name="username" class="w3-input">
@@ -44,8 +43,8 @@
           <input type = "submit" value = "Login" class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey">
         </form>
         <footer class="w3-container w3-black">
-          Click <a href="../index.php">here</a> to back out to the main page. <br>
-          Click <a href="register.php">here</a> to register for an account. <br>
+          <a href="../index.php">Main Page</a><br>
+          <a href="register.php">Register an account</a><br>
         </footer>
       </div>
     </div>
