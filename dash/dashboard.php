@@ -26,7 +26,7 @@
         <?php if($isAdmin == 1) echo "Click <a href='approve.php'>here</a> to approve/deny recent image submissions." ?>
         <br>
 
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
           <table>
             <tr>
               <td>Select image to upload</td> <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
