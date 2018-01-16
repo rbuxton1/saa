@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
-<<<<<<< HEAD
   <div class="w3-display-container w3-light-grey" style="height:100%; width:100%">
     <div class="w3-display-middle">
       <div class="w3-center w3-card" style="width:300px;">

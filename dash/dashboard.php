@@ -72,7 +72,7 @@
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) { //was !==
               $uploadOk = 1;
-              echo "File is an image - (<i>" . $check["mime"] . "</i>). <br>";
+              echo "File is an image - (<i>" . $check["mime"] . " (" . $check . ")</i>). <br>";
             } else {
               echo "File is not an image.<br>";
               $uploadOk = 0;
@@ -96,6 +96,7 @@
                 $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', 'NO_TAG', NULL, '$name', '$data')";
                 $result = mysqli_query($db,$sql);
 
+                //TODO: give these colors, make them look fancy.
                 if($result){
                   echo 'and was uploaded to database! <br>';
                   header("Refresh:1");
