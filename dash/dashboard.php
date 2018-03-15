@@ -14,31 +14,46 @@
 
 ?>
 <html>
-  <head>
-    <title> SAA Dashboard </title>
-  </head>
+  <title>SAA Dash</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
   <body>
-    <center>
-      <h1> Welcome, <?php echo $user; ?>! </h1>
-      <p>
-        Click <a href="logout.php">here</a> to log out. <br>
-        <b>Want to see all your live art? Click <a href=<?php echo("../gallery/view.php?artist=".$user) ?>>here</a>! </b><br>
-        <?php if($isAdmin == 1) echo "Click <a href='approve.php'>here</a> to approve/deny recent image submissions." ?>
-        <br>
 
-        <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
-          <table>
-            <tr>
-              <td>Select image to upload</td> <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
-            </tr><tr>
-              <td><label>Title</label></td> <td><input placeholder="My first art" type="text" name="title" class="box"></td>
-            </tr><tr>
-              <td><label>Description</label></td> <td><input placeholder="Whats cool about this image?" style="height:100px;" type="text" name="data" class="box"></td>
-            </tr>
-          </table>
-          <input type="submit" value="Upload Image" name="submit">
-        </form>
-        <?php
+    <!-- Header -->
+    <header class="w3-container w3-theme w3-padding" id="myHeader">
+      <div class="w3-center">
+        <h4>SAA <?php echo $version; ?></h4>
+        <a href="index.php"><h1 class="w3-xxxlarge w3-animate-top">STUDENT ART ARCHIVE</h1></a>
+        <div class="w3-padding-32">
+          <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="location.href='<?php echo("../gallery/view.php?artist=".$user) ?>'" style="font-weight:900;">GALLERY PAGE</button>
+          <?php if($isAdmin == 1) echo '<button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="'. "location.href='approve.php'" . '"s style="font-weight:900;">APPROVE/DENY</button>'; ?>
+          <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="location.href='logout.php'" style="font-weight:900;">LOGOUT</button>
+        </div>
+      </div>
+    </header>
+
+      <!-- Body -->
+      <div class="w3-center w3-container">
+        <h1 class='w3-xlarge'> Welcome, <?php echo $user; ?>! </h1>
+        <p class="w3-large">
+          <center>
+            <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+              <table>
+                <tr>
+                  <td>Select image to upload</td> <td><input type="file" name="fileToUpload" id="fileToUpload" class="w3-button"></td>
+                </tr><tr>
+                  <td><label>Title</label></td> <td><input placeholder="My first art" type="text" name="title" class="w3-input"></td>
+                </tr><tr>
+                  <td><label>Description</label></td> <td><textarea placeholder="Whats cool about this image?" rows="3" maxlength="500" name="data" class="w3-input"></textarea></td>
+                </tr>
+              </table>
+              <input type="submit" value="Upload Image" name="submit" class="w3-button w3-dark-grey w3-hover-light-grey">
+            </form>
+          </center>
+          <?php
           include('config.php');
 
           function generateRandomString($length = 10) {
@@ -72,24 +87,24 @@
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) { //was !==
               $uploadOk = 1;
-              echo "File is an image - (<i>" . $check["mime"] . " (" . $check . ")</i>). <br>";
+              echo "File is an image - (<i>" . $check["mime"] . " (" . $check . ")</i>).";
             } else {
-              echo "File is not an image.<br>";
+              echo "<div class='w3-red'>File is not an image.</div>";
               $uploadOk = 0;
             }
 
             // Check if file already exists
             if (file_exists($target_file)) {
-              echo "Please try again. <br>";
+              echo "<div class='w3-red'>Please try again.</div>";
               $uploadOk = 0;
             }
 
             // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
-              echo "Sorry, your file was not uploaded. <br>";
+              echo "<div class='w3-red'>Sorry, your file was not uploaded.</div>";
             } else {
               $possibleError = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-              echo $target_file . "<br>";
+              echo $target_file;
               if ($possibleError) {
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded to the server... ";
 
@@ -98,40 +113,58 @@
 
                 //TODO: give these colors, make them look fancy.
                 if($result){
-                  echo 'and was uploaded to database! <br>';
+                  echo "<div class='w3-green'>and was uploaded to database!</div>";
                   header("Refresh:1");
                 } else {
-                  echo 'however failed to get to the database. ERR: ' . (string($result)) . "<br>";
+                  echo "<div class='w3-red'>however failed to get to the database. ERR: " . (string($result)) . "</div>";
                   header("Refresh:1");
                 }
               } else {
-                echo "Sorry, there was an error uploading your file. ERR: (" . ((string)$possibleError) . ")<br>";
+                echo "<div class='w3-red'> Sorry, there was an error uploading your file. ERR: (" . ((string)$possibleError) . ")</div><br>";
                 header("Refresh:10");
               }
             }
           }
-        ?>
+          ?>
 
-      </p>
       <hr>
-      <p>
-        <h2> Works waiting to be approved and rated by  <?php echo "(".$user.")"; ?> </h2> <br>
-        <table border="1">
-          <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
-            <?php
-              $req = "SELECT * FROM pendingArt WHERE artist = '$user'";
-              $sql = mysqli_query($db, $req);
-              while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
-                echo "<tr>";
-                echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'>" . "</center></td>";
-                echo "<td><center>" . $row['title'] . "</center></td>";
-                echo "<td><center>" . $row['tags'] . "</center></td>";
-                echo "<td><center>" . $row['data'] . "</center></td>";
-                echo "</tr>";
-              }
-            ?>
-        </table>
+      <p class+'w3-large'>
+        <h2 class="w3-large"> Works waiting to be approved and rated by  <?php echo "(".$user.")"; ?> </h2> <br>
+        <center>
+          <table class="w3-table w3-border w3-striped w3-bordered">
+            <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
+              <?php
+                $req = "SELECT * FROM pendingArt WHERE artist = '$user'";
+                $sql = mysqli_query($db, $req);
+                while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+                  echo "<tr>";
+                  echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:300px; width:auto;'>" . "</center></td>";
+                  echo "<td><center>" . $row['title'] . "</center></td>";
+                  echo "<td><center>" . $row['tags'] . "</center></td>";
+                  echo "<td><center>" . $row['data'] . "</center></td>";
+                  echo "</tr>";
+                }
+              ?>
+          </table>
+        </center>
       </p>
-    </center>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-16">
+      <p>
+        <div class="w3-center">
+          Student Art Archive version 1.0.0 &emsp; <a href="https://github.com/rbuxton1/saa/wiki">Built and maintained by Ryan Buxton and Curtis Worthy</a> &emsp; Senior Project 2017-2018 OHS <br>
+          Theme by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+          <br> <br>
+          <i> SAA, dude! </i>
+        </div>
+      </p>
+      <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-theme-light w3-padding">Go To Top</span> 
+        <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+        <i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+    </footer>
   </body>
 </html>

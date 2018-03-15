@@ -15,19 +15,36 @@
   if($isAdmin == 0) header("Location: login.php"); //kicks out non-admins
 ?>
 <html>
+  <title>SAA Approve</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
   <body>
-    <h1> Recent submissions </h1>
-    <p>
-      <center>
-        Click <a href="dashboard.php">here</a> to go back to your dashboard.<br>
-        <table border="1">
+
+    <!-- Header -->
+    <header class="w3-container w3-theme w3-padding" id="myHeader">
+      <div class="w3-center">
+        <h4>SAA <?php echo $version; ?></h4>
+        <a href="index.php"><h1 class="w3-xxxlarge w3-animate-top">STUDENT ART ARCHIVE</h1></a>
+        <div class="w3-padding-32">
+          <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="location.href='dashboard.php'" style="font-weight:900;">BACK</button>
+          <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="location.href='logout.php'" style="font-weight:900;">LOGOUT</button>
+        </div>
+      </div>
+    </header>
+
+    <h1 class="w3-xlarge"> Recent submissions </h1>
+    <p class="w3-center w3-large w3-container">
+        <table class="w3-table w3-border w3-striped w3-bordered" style="width:100%;">
           <tr><th>Image</th> <th>Title</th> <th>Artist</th> <th>Tags</th> <th>Extra Data</th> <th>Rating</th> <th>Send to live</th></tr>
           <?php
             $req = "SELECT * FROM pendingArt";
             $sql = mysqli_query($db, $req);
             while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
               echo "<tr>";
-              echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:500px; width:auto;'>" . "</center></td>";
+              echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:auto; width:300px;'>" . "</center></td>";
               echo "<td><center>" . $row['title'] . "</center></td>";
               echo "<td><center>" . $row['artist'] . "</center></td>";
               echo "<td><center>" . $row['tags'] . "</center></td>";
@@ -88,5 +105,21 @@
         ?>
       </center>
     </p>
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-16">
+      <p>
+        <div class="w3-center">
+          Student Art Archive version 1.0.0 &emsp; <a href="https://github.com/rbuxton1/saa/wiki">Built and maintained by Ryan Buxton and Curtis Worthy</a> &emsp; Senior Project 2017-2018 OHS <br>
+          Theme by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+          <br> <br>
+          <i> SAA, dude! </i>
+        </div>
+      </p>
+      <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-theme-light w3-padding">Go To Top</span> 
+        <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+        <i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+    </footer>
   </body>
 </html>
