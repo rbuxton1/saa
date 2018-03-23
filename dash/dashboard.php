@@ -26,7 +26,7 @@
     <header class="w3-container w3-theme w3-padding" id="myHeader">
       <div class="w3-center">
         <h4>SAA <?php echo $version; ?></h4>
-        <a href="index.php"><h1 class="w3-xxxlarge w3-animate-top">STUDENT ART ARCHIVE</h1></a>
+        <a href="../index.php"><h1 class="w3-xxxlarge w3-animate-top">STUDENT ART ARCHIVE</h1></a>
         <div class="w3-padding-32">
           <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="location.href='<?php echo("../gallery/view.php?artist=".$user) ?>'" style="font-weight:900;">GALLERY PAGE</button>
           <?php if($isAdmin == 1) echo '<button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="'. "location.href='approve.php'" . '"s style="font-weight:900;">APPROVE/DENY</button>'; ?>
@@ -129,22 +129,25 @@
 
       <hr>
       <p class+'w3-large'>
-        <h2 class="w3-large"> Works waiting to be approved and rated by  <?php echo "(".$user.")"; ?> </h2> <br>
         <center>
-          <table class="w3-table w3-border w3-striped w3-bordered">
-            <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>
-              <?php
-                $req = "SELECT * FROM pendingArt WHERE artist = '$user'";
-                $sql = mysqli_query($db, $req);
-                while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
-                  echo "<tr>";
-                  echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:300px; width:auto;'>" . "</center></td>";
-                  echo "<td><center>" . $row['title'] . "</center></td>";
-                  echo "<td><center>" . $row['tags'] . "</center></td>";
-                  echo "<td><center>" . $row['data'] . "</center></td>";
-                  echo "</tr>";
-                }
-              ?>
+          <?php
+            $req = "SELECT * FROM pendingArt WHERE artist = '$user'";
+            $sql = mysqli_query($db, $req);
+            if(mysqli_num_rows($sql) > 0){
+              echo '<h2 class="w3-large"> Works waiting to be approved and rated by ' . $user .'</h2> <br>
+              <table class="w3-table w3-border w3-striped w3-bordered">
+                <tr><th>Image</th> <th>Title</th> <th>Tags</th> <th>Extra Data</th></tr>';
+            }
+            while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+              echo "<tr>";
+              echo "<td> <center> <img src = '../uploads/" . $row['src'] . "' style ='height:300px; width:auto;'>" . "</center></td>";
+              echo "<td><center>" . $row['title'] . "</center></td>";
+              echo "<td><center>" . $row['tags'] . "</center></td>";
+              echo "<td><center>" . $row['data'] . "</center></td>";
+              echo "</tr>";
+            }
+            echo "</table>";
+          ?>
           </table>
         </center>
       </p>

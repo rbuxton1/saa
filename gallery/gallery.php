@@ -29,10 +29,18 @@
         <div class="w3-container w3-green">
           <h2>Search SAA</h2>
         </div>
+        <br>
         <form action="" method="post" class="w3-container">
-          <label>Search term</label>
-          <input class="w3-input" type="text" name="terms" placeholder="'Art', 'milk', 'ghost'">
-          <input type="submit" class="w3-btn" value="Search" name="submit">
+          <div class="w3-container">
+            <input class="w3-input" type="text" name="terms" placeholder="'Art', 'milk', 'ghost'" style="width:75%;display:inline;">
+            <select class="w3-select" name="sortMode" style="width:20%;display:inline;">
+              <option value="1">Sort By Author name</option>
+              <option value="2">Sort By Newest</option>
+              <option value="3">Sort By Oldest</option>
+              <option value="4" disabled>Sort By Rating</option>
+            </select>
+          </div>
+          <input type="submit" class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" value="Search" name="submit">
         </form>
     </div>
 
@@ -58,6 +66,16 @@
         echo "<p class='w3-large'> Searching '" . $_POST['terms'] . "'</p>";
         $terms = "%" . $_POST['terms'] . "%";
         $req = "SELECT * FROM liveArt WHERE artist LIKE '" . $terms . "' OR title LIKE '" . $terms . "' OR data LIKE '" . $terms . "'";
+        $mode = $_POST["sortMode"];
+        if($mode == 1){
+          $req .= " ORDER BY artist";
+        } elseif($mode == 2){
+          $req .= " ORDER BY id DESC";
+        } elseif($mode == 3){
+          $req .= " ORDER BY id";
+        } elseif($mode == 4){
+          $req .= " ORDER BY rate DESC";
+        }
         $sql = mysqli_query($db,$req);
 
         while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
