@@ -4,7 +4,7 @@
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($db,$_POST['username']);
     $mypassword = mysqli_real_escape_string($db,$_POST['password']);
-    $hashpass = hash('sha256', $password);
+    $hashpass = hash('sha256', $mypassword);
 
     $sql = "SELECT id FROM user WHERE email = '$myusername' and password = '$hashpass'";
     $result = mysqli_query($db,$sql);

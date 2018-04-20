@@ -48,6 +48,28 @@
                   <td><label>Title</label></td> <td><input placeholder="My first art" type="text" name="title" class="w3-input"></td>
                 </tr><tr>
                   <td><label>Description</label></td> <td><textarea placeholder="Whats cool about this image?" rows="3" maxlength="500" name="data" class="w3-input"></textarea></td>
+                </tr><tr>
+                  <td><label>Tags</label></td>
+                  <td>
+                    <div class="w3-row">
+                      <?php
+                        $raw = file_get_contents("tags.txt");
+                        $boys = explode(",", $raw);
+                        $c = 1;
+                        foreach($boys as $line) {
+                          if(c < 3){
+                            echo '<input class="w3-check" type="checkbox" name="' . $line .'"><label>' . $line . '</label>';
+
+                          }
+                          if ($c == 3) {
+                            echo '</div><div class="w3-row">';
+                            $c = 0;
+                          }
+                          $c = $c + 1;
+                        }
+                      ?>
+                    </div>
+                  </td>
                 </tr>
               </table>
               <input type="submit" value="Upload Image" name="submit" class="w3-button w3-dark-grey w3-hover-light-grey">
@@ -69,6 +91,13 @@
           $name = $_SESSION['login_user'];
           $title = $_POST['title'];
           $data = $_POST['data'];
+          $tags = "";
+          foreach ($_POST as $key => $value){
+            if($value == "on"){
+              $tags .= $key . ",";
+            }
+          }
+          $tags = substr($tags, 0, -1);
 
           //clean out the garbage
           $title = preg_replace("/[^a-zA-Z0-9\s]/", "", $title);
@@ -108,7 +137,7 @@
               if ($possibleError) {
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded to the server... ";
 
-                $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', 'NO_TAG', NULL, '$name', '$data')";
+                $sql = "INSERT INTO pendingArt (id, title, src, tags, rate, artist, data) VALUES (NULL, '$title', '$source', '$tags', NULL, '$name', '$data')";
                 $result = mysqli_query($db,$sql);
 
                 //TODO: give these colors, make them look fancy.
